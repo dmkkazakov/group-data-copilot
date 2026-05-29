@@ -1,0 +1,5 @@
+entity_id,severity,flag,explanation
+E001,medium,missing_financials,No financial records were provided for the entity.
+E002,high,revenue_concentration,Entity generates 54.5% of group revenue in 2025.
+E004,high,high_leverage,Debt / EBITDA exceeds 4.0x in 2025.
+E005,high,high_leverage,Debt / EBITDA exceeds 4.0x in 2025.

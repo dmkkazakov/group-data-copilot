@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+title: Group Data Copilot
+authors:
+  - family-names: Kazakov
+    given-names: Dmitry
+version: 0.1.0
+date-released: 2026-05-29
+message: If you use this project, please cite it as an independent research software prototype.

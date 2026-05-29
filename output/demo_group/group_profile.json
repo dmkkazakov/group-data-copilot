@@ -1,0 +1,164 @@
+{
+  "group_name": "Demo Industrial Group",
+  "entities": [
+    {
+      "entity_id": "E001",
+      "name": "Demo Industrial Group Holding",
+      "inn": "7700000001",
+      "country": "RU",
+      "role": "holding",
+      "sector": "diversified"
+    },
+    {
+      "entity_id": "E002",
+      "name": "Demo Machinery Plant",
+      "inn": "7700000002",
+      "country": "RU",
+      "role": "operating",
+      "sector": "manufacturing"
+    },
+    {
+      "entity_id": "E003",
+      "name": "Demo Logistics",
+      "inn": "7700000003",
+      "country": "RU",
+      "role": "service",
+      "sector": "transport"
+    },
+    {
+      "entity_id": "E004",
+      "name": "Demo Trading House",
+      "inn": "7700000004",
+      "country": "RU",
+      "role": "trading",
+      "sector": "wholesale"
+    },
+    {
+      "entity_id": "E005",
+      "name": "Demo Finance SPV",
+      "inn": "7700000005",
+      "country": "RU",
+      "role": "financing",
+      "sector": "financial services"
+    }
+  ],
+  "ownership": [
+    {
+      "parent_id": "E001",
+      "child_id": "E002",
+      "share": 0.85
+    },
+    {
+      "parent_id": "E001",
+      "child_id": "E003",
+      "share": 0.75
+    },
+    {
+      "parent_id": "E001",
+      "child_id": "E004",
+      "share": 0.9
+    },
+    {
+      "parent_id": "E001",
+      "child_id": "E005",
+      "share": 1.0
+    },
+    {
+      "parent_id": "E004",
+      "child_id": "E002",
+      "share": 0.1
+    }
+  ],
+  "financials": [
+    {
+      "entity_id": "E002",
+      "year": 2024,
+      "revenue": 12500000000.0,
+      "ebitda": 1800000000.0,
+      "debt": 4500000000.0,
+      "cash": 600000000.0
+    },
+    {
+      "entity_id": "E003",
+      "year": 2024,
+      "revenue": 2100000000.0,
+      "ebitda": 260000000.0,
+      "debt": 900000000.0,
+      "cash": 150000000.0
+    },
+    {
+      "entity_id": "E004",
+      "year": 2024,
+      "revenue": 8700000000.0,
+      "ebitda": 700000000.0,
+      "debt": 3200000000.0,
+      "cash": 350000000.0
+    },
+    {
+      "entity_id": "E005",
+      "year": 2024,
+      "revenue": 300000000.0,
+      "ebitda": 50000000.0,
+      "debt": 2800000000.0,
+      "cash": 100000000.0
+    },
+    {
+      "entity_id": "E002",
+      "year": 2025,
+      "revenue": 14800000000.0,
+      "ebitda": 2100000000.0,
+      "debt": 5100000000.0,
+      "cash": 700000000.0
+    },
+    {
+      "entity_id": "E003",
+      "year": 2025,
+      "revenue": 2600000000.0,
+      "ebitda": 310000000.0,
+      "debt": 950000000.0,
+      "cash": 180000000.0
+    },
+    {
+      "entity_id": "E004",
+      "year": 2025,
+      "revenue": 9400000000.0,
+      "ebitda": 760000000.0,
+      "debt": 3500000000.0,
+      "cash": 420000000.0
+    },
+    {
+      "entity_id": "E005",
+      "year": 2025,
+      "revenue": 350000000.0,
+      "ebitda": 60000000.0,
+      "debt": 3000000000.0,
+      "cash": 120000000.0
+    }
+  ],
+  "risk_flags": [
+    {
+      "entity_id": "E001",
+      "severity": "medium",
+      "flag": "missing_financials",
+      "explanation": "No financial records were provided for the entity."
+    },
+    {
+      "entity_id": "E002",
+      "severity": "high",
+      "flag": "revenue_concentration",
+      "explanation": "Entity generates 54.5% of group revenue in 2025."
+    },
+    {
+      "entity_id": "E004",
+      "severity": "high",
+      "flag": "high_leverage",
+      "explanation": "Debt / EBITDA exceeds 4.0x in 2025."
+    },
+    {
+      "entity_id": "E005",
+      "severity": "high",
+      "flag": "high_leverage",
+      "explanation": "Debt / EBITDA exceeds 4.0x in 2025."
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+# Group Data Copilot
+
+**Group Data Copilot** is a lightweight AI-ready data agent for corporate banking and credit analytics.
+
+It collects and structures information about a corporate group: legal entities, ownership links, roles inside the group, financial indicators, risk flags, and missing-data gaps.
+
+The project is designed as a pet / R&D project for demonstrating practical agentic workflows in corporate credit analysis.
+
+## What it does
+
+Given a group name or tax identifier, the agent can:
+
+- create a structured group profile;
+- ingest local CSV files with entities, ownership and financials;
+- enrich the profile with configurable open-source connectors;
+- build a group graph;
+- calculate basic concentration, leverage and data-quality metrics;
+- generate Markdown, JSON and CSV outputs;
+- prepare an analyst-style report suitable for GitHub, credit memo drafts or research demos.
+
+## Important note
+
+The default version works fully offline using local files and mock connectors. Real integrations with official registries or paid data providers should be added through the connector interface.
+
+## Installation
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+pip install -e .
+```
+
+On Windows:
+
+```bash
+python -m venv .venv
+.venv\Scripts\activate
+pip install -e .
+```
+
+## Quick start
+
+```bash
+group-data-copilot run \
+  --group-name "Demo Industrial Group" \
+  --data-dir examples/data \
+  --output-dir output/demo_group
+```
+
+Or:
+
+```bash
+python -m group_data_copilot run \
+  --group-name "Demo Industrial Group" \
+  --data-dir examples/data \
+  --output-dir output/demo_group
+```
+
+## Output
+
+The agent creates:
+
+```text
+output/demo_group/
+├── group_profile.json
+├── entities.csv
+├── ownership_edges.csv
+├── financial_summary.csv
+├── risk_flags.csv
+├── group_report.md
+└── graph_edges.csv
+```
+
+## Repository structure
+
+```text
+group_data_copilot/
+├── cli.py                 # command line interface
+├── agent.py               # orchestration logic
+├── connectors.py          # connector interface and local loaders
+├── models.py              # typed data models
+├── analytics.py           # metrics and risk flags
+├── graph.py               # ownership graph builder
+└── report.py              # Markdown/JSON/CSV report writer
+```
+
+## Example use case
+
+Corporate credit analyst needs to understand a group before limit structuring:
+
+1. which legal entities are inside the group;
+2. who owns whom;
+3. where revenue and debt are concentrated;
+4. what data is missing;
+5. which entities create obvious analytical risk flags.
+
+The agent prepares a first-pass evidence package.
+
+## Demo positioning
+
+> I built a Group Data Copilot: an agentic workflow that collects, normalizes and structures corporate group data for credit analytics. It produces a reproducible group dossier with entity tables, ownership edges, financial concentration metrics, risk flags and a Markdown analyst report.
+
+## License
+
+MIT

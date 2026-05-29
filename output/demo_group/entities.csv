@@ -1,0 +1,6 @@
+entity_id,name,inn,country,role,sector
+E001,Demo Industrial Group Holding,7700000001,RU,holding,diversified
+E002,Demo Machinery Plant,7700000002,RU,operating,manufacturing
+E003,Demo Logistics,7700000003,RU,service,transport
+E004,Demo Trading House,7700000004,RU,trading,wholesale
+E005,Demo Finance SPV,7700000005,RU,financing,financial services
