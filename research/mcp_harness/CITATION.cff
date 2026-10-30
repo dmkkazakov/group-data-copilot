@@ -5,7 +5,8 @@ title: "Evidence Constrained Reconstruction of Corporate Groups with MCP and an 
 authors:
   - family-names: Kazakov
     given-names: Dmitry
-version: 1.2.0
+    affiliation: "NEIMARK University, Nizhny Novgorod, Russia"
+version: 1.3.0
 date-released: 2026-10-30
 repository-code: "https://github.com/dmkkazakov/group-data-copilot"
 url: "https://github.com/dmkkazakov/group-data-copilot/tree/main/research/mcp_harness"

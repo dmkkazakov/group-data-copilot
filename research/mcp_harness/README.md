@@ -69,4 +69,4 @@ Version 1.1 adds 520 one-field corruptions of the 40 reference assertions. The f
 
 The build regenerates equations from current TeX every time and does not rewrite the manuscript sources. The release manifest records delivered bytes; Word/PDF rebuilding may differ in timestamps or renderer metadata. One harness writer per output directory is supported.
 
-Version 1.2 names OpenAI ChatGPT and Codex in both language versions and their abstracts, and adds a submission guide plus separate form-field files. The case corpus and numerical findings are unchanged from version 1.1. Funding, competing interests, profile affiliation and license choices are not asserted on the author's behalf.
+Version 1.2 names OpenAI ChatGPT and Codex in both language versions and their abstracts, and adds a submission guide plus separate form-field files. The case corpus and numerical findings are unchanged from version 1.1. Funding, competing interests and license choices remain for the author to confirm. Version 1.3 records the author-confirmed affiliation: NEIMARK University, Nizhny Novgorod, Russia.

@@ -1,16 +1,17 @@
 {
   "title": "Evidence Constrained Reconstruction of Corporate Groups with MCP and an Agent Harness",
-  "abstract": "Public corporate disclosures contain enough information to reconstruct useful parts of a business group, but they rarely describe ownership, voting power, management and consolidation in one consistent language. This paper develops a typed, dated evidence model and a bounded execution harness connected through the Model Context Protocol (MCP). A purposive study of MTS, HSBC, Berkshire Hathaway, Tencent and Singtel contributes a reproducible corpus of 40 assertions, five case reconstructions and executable arithmetic checks. The cases expose aggregate interests mistaken for direct holdings, different observation dates within one report, unequal share classes and contractual control without equivalent registered equity. Recalculation also leaves one numerical discrepancy open: Berkshire's disclosed share counts imply 14.348232% economic participation for Warren Buffett, while its table reports 14.4%. The released implementation preserves both values instead of silently reconciling them. Forty-eight research tests pass, including a real MCP subprocess exchange and checkpoint replay. A deterministic corruption experiment rejects all 520 single-field alterations and accepts 40 unchanged controls; these controls measure replay integrity against the reference, not the truth of that reference. These results establish reproducibility for a small curated corpus; they do not estimate the accuracy of autonomous extraction. OpenAI ChatGPT and Codex assisted source discovery, drafting, translation and code development. Numerical checks are reproducible in the accompanying repository.",
+  "abstract": "Public corporate disclosures contain enough information to reconstruct useful parts of a business group, but they rarely describe ownership, voting power, management and consolidation in one consistent language. This paper develops a typed, dated evidence model and a bounded execution harness connected through the Model Context Protocol (MCP). A purposive study of MTS, HSBC, Berkshire Hathaway, Tencent and Singtel contributes a reproducible corpus of 40 assertions, five case reconstructions and executable arithmetic checks. The cases expose aggregate interests mistaken for direct holdings, different observation dates within one report, unequal share classes and contractual control without equivalent registered equity. Recalculation also leaves one numerical discrepancy open: Berkshire's disclosed share counts imply 14.348232% economic participation for Warren Buffett, while its table reports 14.4%. The released implementation preserves both values instead of silently reconciling them. Forty-eight research tests pass, including a real MCP subprocess exchange and checkpoint replay. A deterministic corruption experiment rejects all 520 single-field alterations and accepts 40 unchanged controls; these controls measure replay integrity against the reference, not the truth of that reference. These results establish reproducibility for a small curated corpus; they do not estimate the accuracy of autonomous extraction. OpenAI ChatGPT and Codex assisted source discovery, drafting, translation and code development. Numerical checks are reproducible in the accompanying repository. Author affiliation: NEIMARK University, Nizhny Novgorod, Russia.",
   "author": {
     "given_name": "Dmitry",
     "family_name": "Kazakov",
     "email": "dmkkazakov@gmail.com",
-    "manuscript_author_line": "Independent research",
-    "affiliation_for_profile": null,
+    "manuscript_author_line": "NEIMARK University, Nizhny Novgorod, Russia",
+    "affiliation_for_profile": "NEIMARK University, Nizhny Novgorod, Russia",
+    "affiliation_confirmed_by_author": true,
     "orcid": null
   },
   "paper_date": "2026-10-30",
-  "paper_version": "1.2",
+  "paper_version": "1.3",
   "corpus_schema_version": "1.1.0",
   "language": "English",
   "content_format": "Paper",
@@ -43,7 +44,7 @@
     "author_confirmed": false
   },
   "competing_interests": {
-    "text_if_true": "The author declares no personal or financial relationships that could have influenced, or could reasonably be perceived to have influenced, this research.",
+    "text_if_true": "The author is affiliated with NEIMARK University, Nizhny Novgorod, Russia. The author declares no other personal or financial relationships that could have influenced, or could reasonably be perceived to have influenced, this research.",
     "author_confirmed": false
   },
   "license_selection": null,
@@ -51,7 +52,7 @@
   "doi": null,
   "author_actions_before_submission": [
     "Review the entire manuscript and sources",
-    "Confirm current author profile and affiliation",
+    "Set the confirmed NEIMARK University affiliation in the SSRN author profile",
     "Confirm or replace funding and competing-interest statements",
     "Select license and attest to upload rights"
   ],
@@ -78,6 +79,6 @@
       "url": "https://www.aeaweb.org/jel/guide/jel.php"
     }
   ],
-  "abstract_word_count": 211,
-  "abstract_character_count": 1596
+  "abstract_word_count": 218,
+  "abstract_character_count": 1661
 }

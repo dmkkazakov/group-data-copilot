@@ -35,14 +35,14 @@ def main():
               "their publicly disclosed corporate roles or ownership capacities. No ethics committee "
               "approval or formal exemption determination is claimed.")
     funding = "This research received no specific grant from any funding agency in the public, commercial, or not-for-profit sectors."
-    conflict = "The author declares no personal or financial relationships that could have influenced, or could reasonably be perceived to have influenced, this research."
+    conflict = "The author is affiliated with NEIMARK University, Nizhny Novgorod, Russia. The author declares no other personal or financial relationships that could have influenced, or could reasonably be perceived to have influenced, this research."
     data = ("The curated evidence corpus, source locators, code, tests and calculation outputs are available at "
             + RESEARCH + ". The verified research-code baseline is commit " + VERIFIED_COMMIT + ". "
             "The public issuer reports remain at their original URLs and are not redistributed. "
             "The corpus contains 40 selected assertions and does not claim complete group coverage.")
     meta = {
-        "title": title, "abstract": abstract, "author": {"given_name": "Dmitry", "family_name": "Kazakov", "email": "dmkkazakov@gmail.com", "manuscript_author_line": "Independent research", "affiliation_for_profile": None, "orcid": None},
-        "paper_date": "2026-10-30", "paper_version": "1.2", "corpus_schema_version": "1.1.0",
+        "title": title, "abstract": abstract, "author": {"given_name": "Dmitry", "family_name": "Kazakov", "email": "dmkkazakov@gmail.com", "manuscript_author_line": "NEIMARK University, Nizhny Novgorod, Russia", "affiliation_for_profile": "NEIMARK University, Nizhny Novgorod, Russia", "affiliation_confirmed_by_author": True, "orcid": None},
+        "paper_date": "2026-10-30", "paper_version": "1.3", "corpus_schema_version": "1.1.0",
         "language": "English", "content_format": "Paper", "content_type": "Preprint",
         "upload_file": "Corporate_Groups_SSRN_EN.pdf", "keywords": keywords,
         "jel_codes": ["G32", "G34", "C88"],
@@ -52,7 +52,7 @@ def main():
         "funding_statement": {"text_if_true": funding, "author_confirmed": False},
         "competing_interests": {"text_if_true": conflict, "author_confirmed": False},
         "license_selection": None, "ssrn_id": None, "doi": None,
-        "author_actions_before_submission": ["Review the entire manuscript and sources", "Confirm current author profile and affiliation", "Confirm or replace funding and competing-interest statements", "Select license and attest to upload rights"],
+        "author_actions_before_submission": ["Review the entire manuscript and sources", "Set the confirmed NEIMARK University affiliation in the SSRN author profile", "Confirm or replace funding and competing-interest statements", "Select license and attest to upload rights"],
         "policy_check_date": "2026-10-30", "sources": [{"title": a, "url": b} for a,b in SOURCES],
         "abstract_word_count": len(abstract.split()), "abstract_character_count": len(abstract),
     }
@@ -67,10 +67,11 @@ def main():
         "07_DATA_AVAILABILITY.txt": data,
         "08_FUNDING_IF_TRUE.txt": "CONDITIONAL DRAFT — use only if factually correct and confirmed by the author. Do not paste this instruction.\n\n" + funding,
         "09_COMPETING_INTERESTS_IF_TRUE.txt": "CONDITIONAL DRAFT — use only if factually correct and confirmed by the author. Do not paste this instruction.\n\n" + conflict,
+        "10_AUTHOR_AFFILIATION.txt": "Dmitry Kazakov\nNEIMARK University, Nizhny Novgorod, Russia\ndmkkazakov@gmail.com",
     }
     for name, content in texts.items():
         (OUT / name).write_text(content+"\n", encoding="utf-8")
-    (OUT / "CITATION.bib").write_text("@unpublished{kazakov2026corporategroups,\n  author = {Kazakov, Dmitry},\n  title = {"+title+"},\n  year = {2026},\n  month = {October},\n  note = {Working paper, version 1.2; not yet submitted to SSRN},\n  url = {"+RESEARCH+"}\n}\n", encoding="utf-8")
+    (OUT / "CITATION.bib").write_text("@unpublished{kazakov2026corporategroups,\n  author = {Kazakov, Dmitry},\n  title = {"+title+"},\n  year = {2026},\n  month = {October},\n  note = {Working paper, version 1.3; author affiliation: NEIMARK University, Nizhny Novgorod, Russia; not yet submitted to SSRN},\n  url = {"+RESEARCH+"}\n}\n", encoding="utf-8")
 
     d=Document();sec=d.sections[0]
     sec.page_width=Inches(8.27);sec.page_height=Inches(11.69)
@@ -104,10 +105,10 @@ def main():
         p('')
 
     p('Пакет публикации на SSRN','Title')
-    p('Дмитрий Казаков · 30 октября 2026 года · версия статьи 1.2')
+    p('Дмитрий Казаков · 30 октября 2026 года · версия статьи 1.3')
     p('Загрузите английский PDF. В нем уже находятся пять кейсов, 16 формул, источники и раскрытие использования ИИ. Эта инструкция и русская версия предназначены для автора.')
     heading('Что загрузить и что указать')
-    table([('Файл','Corporate_Groups_SSRN_EN.pdf'),('Content Format','Paper'),('Content Type','Preprint'),('Language','English'),('Date paper was written','2026-10-30'),('Author','Dmitry Kazakov'),('Contact Author','Dmitry Kazakov'),('Email','dmkkazakov@gmail.com'),('Аффилиация','В рукописи: Independent research. В профиле укажите актуальные достоверные сведения; при изменении строки автора обновите PDF.'),('ORCID','Добавьте существующий ORCID, если он есть. Номер не создан и не подставлен.'),('DOI и SSRN ID','Пока отсутствуют; не заполняйте вымышленными значениями.')])
+    table([('Файл','Corporate_Groups_SSRN_EN.pdf'),('Content Format','Paper'),('Content Type','Preprint'),('Language','English'),('Date paper was written','2026-10-30'),('Author','Dmitry Kazakov'),('Contact Author','Dmitry Kazakov'),('Email','dmkkazakov@gmail.com'),('Аффилиация','NEIMARK University, Nizhny Novgorod, Russia. Укажите ту же организацию в профиле SSRN.'),('ORCID','Добавьте существующий ORCID, если он есть. Номер не создан и не подставлен.'),('DOI и SSRN ID','Пока отсутствуют; не заполняйте вымышленными значениями.')])
     sub('Классификация')
     p('Поиск в форме: Corporate Governance, Corporate Finance, Information Systems. Это рекомендации по тематике. Выберите подходящие подразделы из текущего списка формы. Коды JEL: G32, G34, C88.')
     url('Материалы и код на GitHub',RESEARCH)
@@ -146,7 +147,7 @@ def main():
     sub('Лицензия')
     p('Creative Commons на SSRN необязательна. Пока отдельное решение не принято, можно оставить стандартные условия SSRN без выбора CC. CC BY допускает переработку и коммерческое использование с указанием авторства; CC BY-NC-ND — распространение неизмененной работы с указанием авторства для некоммерческого использования. Выбор в форме не меняет лицензию кода и не отменяет ранее предоставленные разрешения.')
     sub('Что проверено')
-    p('65 тестов: 48 исследовательских и 17 для CSV-приложения. Проверка GitHub Actions для версии исследовательского кода завершилась успешно. В эксперименте обнаружены все 520 внесенных искажений. Это не оценка точности автоматического извлечения фактов. Версия 1.2 уточняет раскрытие ИИ и добавляет пакет подачи; числа и корпус версии 1.1 не изменены.')
+    p('65 тестов: 48 исследовательских и 17 для CSV-приложения. Проверка GitHub Actions для версии исследовательского кода завершилась успешно. В эксперименте обнаружены все 520 внесенных искажений. Это не оценка точности автоматического извлечения фактов. Версия 1.3 указывает подтвержденную автором аффилиацию NEIMARK University в рукописи, аннотации и материалах подачи; числа и корпус версии 1.1 не изменены.')
     p('В статье сохранены расхождение Berkshire на 0,051768 процентного пункта и ограничение повторного доступа к страницам МТС. Подготовка пакета не заменяет редакционную проверку SSRN.')
     sub('Официальные инструкции')
     for title_,u in SOURCES:url(title_,u)
@@ -158,7 +159,7 @@ def main():
         for element in list(tree.iter(qn('w:pBdr'))):
             element.getparent().remove(element)
     d.save(OUT/'SSRN_GUIDE_RU.docx')
-    print(json.dumps({'paper_version':'1.2','abstract_words':len(abstract.split()),'abstract_chars':len(abstract),'guide':str(OUT/'SSRN_GUIDE_RU.docx')},ensure_ascii=False))
+    print(json.dumps({'paper_version':'1.3','abstract_words':len(abstract.split()),'abstract_chars':len(abstract),'guide':str(OUT/'SSRN_GUIDE_RU.docx')},ensure_ascii=False))
 
 
 if __name__ == '__main__':

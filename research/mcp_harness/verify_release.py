@@ -23,10 +23,16 @@ def verify():
     fields = json.loads((ROOT / "submission/fields.json").read_text(encoding="utf-8"))
     assert fields["abstract"] == abstract == (ROOT / "submission/02_ABSTRACT.txt").read_text(encoding="utf-8").strip(), "Form abstract drift"
     assert fields["title"] == en.splitlines()[0][2:] == (ROOT / "submission/01_TITLE.txt").read_text(encoding="utf-8").strip()
-    assert fields["paper_version"] == "1.2" and "Version 1.2" in en and "Версия 1.2" in ru
+    assert fields["paper_version"] == "1.3" and "Version 1.3" in en and "Версия 1.3" in ru
     assert fields["abstract_word_count"] == len(abstract.split()) and fields["abstract_character_count"] == len(abstract)
     assert fields["ai_disclosure"] == en.split("## AI assistance disclosure\n\n", 1)[1].split("\n\n", 1)[0]
     assert "OpenAI ChatGPT and Codex" in abstract
+    affiliation = "NEIMARK University, Nizhny Novgorod, Russia"
+    assert affiliation in en and affiliation in abstract
+    assert fields["author"]["affiliation_for_profile"] == affiliation
+    assert fields["author"]["affiliation_confirmed_by_author"] is True
+    assert "Университет НЕЙМАРК, Нижний Новгород, Россия" in ru.split("## 1 ", 1)[0]
+    assert "Independent research" not in en and "Независимое исследование" not in ru
     assert fields["funding_statement"]["author_confirmed"] is False and fields["competing_interests"]["author_confirmed"] is False
     pattern = r"^\$\$(.*?)\$\$$"
     en_equations = re.findall(pattern, en, flags=re.M)

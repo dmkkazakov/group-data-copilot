@@ -23,11 +23,11 @@ def package(output):
     files["SSRN_GUIDE_RU.docx"] = (ROOT/"submission/SSRN_GUIDE_RU.docx").read_bytes()
     for p in sorted((ROOT/"submission").glob("*.txt")):
         files["form_fields/"+p.name] = p.read_bytes()
-    files["START_HERE.txt"] = ("ПАКЕТ ПОДАЧИ НА SSRN — ВЕРСИЯ 1.2\n\n"
+    files["START_HERE.txt"] = ("ПАКЕТ ПОДАЧИ НА SSRN — ВЕРСИЯ 1.3\n\n"
         "1. Откройте SSRN_GUIDE_RU.docx: инструкция и все поля формы.\n"
         "2. На SSRN загружайте Corporate_Groups_SSRN_EN.pdf из корня архива.\n"
         "3. Тексты для копирования находятся в form_fields. Файлы 08 и 09 — условные декларации; используйте только при соответствии фактам.\n"
-        "4. Проверьте аффилиацию, финансирование, конфликт интересов и права на загрузку; выберите лицензию.\n"
+        "4. Укажите NEIMARK University, Nizhny Novgorod, Russia в профиле SSRN. Проверьте финансирование, конфликт интересов и права на загрузку; выберите лицензию.\n"
         "5. Прочитайте рукопись перед окончательным Submit. Подача в этом пакете не выполнена.\n\n"
         "Русская версия и редактируемые Word-файлы:\n"
         "repository/research/mcp_harness/artifacts/\n\n"

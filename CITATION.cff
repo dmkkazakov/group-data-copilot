@@ -4,6 +4,7 @@ title: Group Data Copilot
 authors:
   - family-names: Kazakov
     given-names: Dmitry
+    affiliation: "NEIMARK University, Nizhny Novgorod, Russia"
 version: 0.1.1
 date-released: 2026-10-30
 repository-code: https://github.com/dmkkazakov/group-data-copilot
