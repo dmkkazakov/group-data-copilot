@@ -5,6 +5,7 @@ Five public cases: **MTS (Russia), HSBC (UK), Berkshire Hathaway (US), Tencent (
 - [English paper](paper_en.md) · [SSRN PDF](artifacts/Corporate_Groups_SSRN_EN.pdf)
 - [Russian paper](paper_ru.md) · [Russian Word document](artifacts/MCP_Harness_Corporate_Groups.docx)
 - [Submission metadata](SSRN_SUBMISSION.md)
+- [SSRN form fields and guide](submission/README.md) · [Russian submission guide](submission/SSRN_GUIDE_RU.docx)
 - [Normalized evidence](data/cases.json) · [Computed results](results/results.json)
 - [Recorded tests](results/test_report.json) · [Source recheck](data/source_recheck.json) · [Release checksums](release_manifest.json)
 
@@ -53,6 +54,7 @@ Install the pinned document dependencies in a separate environment, then run:
 ```bash
 python3 -m pip install -r requirements-documents.txt
 python3 build_documents.py
+python3 build_submission.py
 ```
 
 This creates the two DOCX files from Markdown and equation images. Convert them with LibreOffice or Word to PDF. The delivered PDFs were rendered and checked page by page. No model or network access is required to rebuild DOCX files.
@@ -66,3 +68,5 @@ Code is covered by the repository's MIT license. Copyright in linked issuer repo
 Version 1.1 adds 520 one-field corruptions of the 40 reference assertions. The full gate rejects all 520 and accepts all 40 unchanged controls; a source-field-presence baseline accepts both sets. These are constructed integrity controls, not independent extraction predictions. See [per-field results](results/mutation_results.json) and the [audit report](AUDIT.md). A reference transcription error can still pass exact replay.
 
 The build regenerates equations from current TeX every time and does not rewrite the manuscript sources. The release manifest records delivered bytes; Word/PDF rebuilding may differ in timestamps or renderer metadata. One harness writer per output directory is supported.
+
+Version 1.2 names OpenAI ChatGPT and Codex in both language versions and their abstracts, and adds a submission guide plus separate form-field files. The case corpus and numerical findings are unchanged from version 1.1. Funding, competing interests, profile affiliation and license choices are not asserted on the author's behalf.

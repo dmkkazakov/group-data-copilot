@@ -1,5 +1,5 @@
 {
-  "version": "1.1",
+  "version": "1.2",
   "release_date": "2026-10-30",
   "hash_algorithm": "SHA-256",
   "scope": "Distributed research files; excludes this manifest and generated local working directories",
@@ -17,37 +17,37 @@
     {
       "path": "CITATION.cff",
       "size_bytes": 590,
-      "sha256": "5a4b0e2362d9df11639f4a9eed69f967d1f2294bb76cffe7ac51c1dd270ddf8e"
+      "sha256": "2e4f9c01916f4b8ca597733e7c208472c80ad8a3503ba2c58fb764365f70c151"
     },
     {
       "path": "README.md",
-      "size_bytes": 5646,
-      "sha256": "93fe89298441557f9a05c697d3f85a8fe116ca1b2f0f713d25a8c2f8e80b1d31"
+      "size_bytes": 6121,
+      "sha256": "7f8d8fd33e999e653f32134a4480c1a06f7f4dffbb058985899c1c5bfb787111"
     },
     {
       "path": "SSRN_SUBMISSION.md",
-      "size_bytes": 3355,
-      "sha256": "889542b0ad9c4cbdd25b34cfb5b7dc2b26184f328abc3c6caa54943b2e7e18c1"
+      "size_bytes": 3745,
+      "sha256": "156c3fecd7e4eac1f26e07849846bad11308710db64a394f2769f38782101751"
     },
     {
       "path": "artifacts/Corporate_Groups_SSRN_EN.docx",
-      "size_bytes": 234219,
-      "sha256": "9017d884c6c469dd8c7880835ba199c9c2bd2d34c2df153bec34fac72711376c"
+      "size_bytes": 234273,
+      "sha256": "e1a7486e65cf7167e4ad15815578749a906918eeaf5204e316fd655a9420625d"
     },
     {
       "path": "artifacts/Corporate_Groups_SSRN_EN.pdf",
-      "size_bytes": 392650,
-      "sha256": "ff976caa0578a5255518c184385d63cea4486b129db9647b7334c2d9602a401c"
+      "size_bytes": 392770,
+      "sha256": "f47de536261c1ad7891ab133981b4a97bfc7736a86eed1f58e5afe36e1eb76e1"
     },
     {
       "path": "artifacts/MCP_Harness_Corporate_Groups.docx",
-      "size_bytes": 237830,
-      "sha256": "5ce9b9f5c9dbae41fb001bcf6502175c023a584ebcd90b81a98276bd1e0c37b5"
+      "size_bytes": 237919,
+      "sha256": "7d6736f0e419654f7609eb03fddfdee9b30beb8edbec2078051a886ad17028f9"
     },
     {
       "path": "artifacts/MCP_Harness_Corporate_Groups_RU.pdf",
-      "size_bytes": 407455,
-      "sha256": "3c329c2c80f8d790852af71bac9dce44fc6bb13c8de3a90b27f4f579314d12bc"
+      "size_bytes": 407669,
+      "sha256": "a9a7763129575bcb20c91c9cc025e5a6953e8f6547b69e56ff7fbb882f4c4936"
     },
     {
       "path": "build_dataset.py",
@@ -58,6 +58,11 @@
       "path": "build_documents.py",
       "size_bytes": 7042,
       "sha256": "6e066222abac3e7768282bb69efb3a4227f500690b59a4bd96b3a5f5dde158f1"
+    },
+    {
+      "path": "build_submission.py",
+      "size_bytes": 15308,
+      "sha256": "fdb2b26adb0fafffb2af86432e0455e3dcdf46a3c0ece4b43fc7008c5dde15b2"
     },
     {
       "path": "data/cases.json",
@@ -95,14 +100,19 @@
       "sha256": "9cfb3edcc6428584e0912f9983e9bda096460f8d45ab31f5d41afa6472126214"
     },
     {
+      "path": "package_submission.py",
+      "size_bytes": 3525,
+      "sha256": "42c0c824343ba5dcceb89a3c905ffbfab861832cdb8496e68a4f6fe29357643a"
+    },
+    {
       "path": "paper_en.md",
-      "size_bytes": 35581,
-      "sha256": "686cf06406faaca57b137ef07e224e67ba60695deea9c9b901a13c5824f9eb9c"
+      "size_bytes": 35749,
+      "sha256": "7d1d60109d47ef4294402727a1ddad474c73f4d85f209341a7c33960ca0ba2e3"
     },
     {
       "path": "paper_ru.md",
-      "size_bytes": 55692,
-      "sha256": "ae5ad649cb4c6c1754c8b0147dca2cb05dc56d291a4a4db7122cbbf0daa623fe"
+      "size_bytes": 55948,
+      "sha256": "f3339d47d421ee47fc7abb5bbec45e1a06e3d1e672bc9e6877062d682cd37c6d"
     },
     {
       "path": "requirements-documents.txt",
@@ -150,14 +160,79 @@
       "sha256": "a30d1dd1913ee238d9dda63a1bf476adb9ed382ba858d1f5f8fa84df1ed05c7f"
     },
     {
+      "path": "submission/01_TITLE.txt",
+      "size_bytes": 86,
+      "sha256": "ebcf3704f9912374fa3ece539f8735012fc3f5d420ee7b503f3279ecc70bf83d"
+    },
+    {
+      "path": "submission/02_ABSTRACT.txt",
+      "size_bytes": 1597,
+      "sha256": "ea9bc876cf145abc588c8a0f994a158e5c482b6d4d1a5a95fe8622bd6e29c9fa"
+    },
+    {
+      "path": "submission/03_KEYWORDS.txt",
+      "size_bytes": 117,
+      "sha256": "e4cdbbb20bc0ebd5ddfc2aed215d01223c80618a949d7833a459088780f50357"
+    },
+    {
+      "path": "submission/04_JEL_CODES.txt",
+      "size_bytes": 12,
+      "sha256": "a28c0cccd6cdaa8533121558a4d2b0b166c818b8eb73e1f004fcf61792b9bda4"
+    },
+    {
+      "path": "submission/05_AI_DISCLOSURE.txt",
+      "size_bytes": 446,
+      "sha256": "72bf21de80c412b537676cff80936a3b2611f33754316d0912dc91da4740e0b1"
+    },
+    {
+      "path": "submission/06_ETHICS_STATEMENT.txt",
+      "size_bytes": 395,
+      "sha256": "4edcfc23ddb703725e22dec552ec002885016ba399cbdf1142ea98e2a11e218d"
+    },
+    {
+      "path": "submission/07_DATA_AVAILABILITY.txt",
+      "size_bytes": 438,
+      "sha256": "a6be3268ab7ca1aed3c02bf1dd64996faf36aa60afb890c0ff875e5b51d1136b"
+    },
+    {
+      "path": "submission/08_FUNDING_IF_TRUE.txt",
+      "size_bytes": 232,
+      "sha256": "6966359db38c1d5cbfa4bc875387920b87caaeecb4c79b6d92bcd2f87a6aad5d"
+    },
+    {
+      "path": "submission/09_COMPETING_INTERESTS_IF_TRUE.txt",
+      "size_bytes": 268,
+      "sha256": "2d9a7430fe5387a2c0f6b69593939e274554060f48c4c5bfac0c2a34b4424354"
+    },
+    {
+      "path": "submission/CITATION.bib",
+      "size_bytes": 366,
+      "sha256": "6ae1a07dbf6abe56fcf949593ebf75e62d8cd13285873068185cf980b0601b44"
+    },
+    {
+      "path": "submission/README.md",
+      "size_bytes": 2261,
+      "sha256": "c2ae518d24097bf48adb98ae418fec01a90b9dbe92f09517b5df58b9fce38e09"
+    },
+    {
+      "path": "submission/SSRN_GUIDE_RU.docx",
+      "size_bytes": 42096,
+      "sha256": "709cb2ea9fe9b656f57438e9413ba67d13637fc3bccad9979e3d2d7cdb01a0d4"
+    },
+    {
+      "path": "submission/fields.json",
+      "size_bytes": 5615,
+      "sha256": "7fce2d8591950a37286acc424aa4d6ec056f8e51a11cca2fc5bcec53006dc2b5"
+    },
+    {
       "path": "test_research.py",
       "size_bytes": 11079,
       "sha256": "98716a4b2c34983182b771ca67ee7bc60dc61c8c2128a2f26aa8671a40509030"
     },
     {
       "path": "verify_release.py",
-      "size_bytes": 3410,
-      "sha256": "ae7eacb2d95eb56c2322e9775f28318c9fa2c8a00a22c62dc70864a633613e99"
+      "size_bytes": 4274,
+      "sha256": "884c5bc6da9d766d66de81c2630ec7466b8eee10f8a264e15e51a06bf61f6168"
     }
   ]
 }

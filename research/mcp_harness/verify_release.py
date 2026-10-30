@@ -20,6 +20,14 @@ def verify():
     metadata = (ROOT / "SSRN_SUBMISSION.md").read_text(encoding="utf-8")
     abstract = en.split("## Abstract\n\n", 1)[1].split("\n\nKeywords:", 1)[0]
     assert metadata.split("## Abstract to paste\n\n", 1)[1].split("\n\n## Submission notes", 1)[0] == abstract, "Submission abstract drift"
+    fields = json.loads((ROOT / "submission/fields.json").read_text(encoding="utf-8"))
+    assert fields["abstract"] == abstract == (ROOT / "submission/02_ABSTRACT.txt").read_text(encoding="utf-8").strip(), "Form abstract drift"
+    assert fields["title"] == en.splitlines()[0][2:] == (ROOT / "submission/01_TITLE.txt").read_text(encoding="utf-8").strip()
+    assert fields["paper_version"] == "1.2" and "Version 1.2" in en and "Версия 1.2" in ru
+    assert fields["abstract_word_count"] == len(abstract.split()) and fields["abstract_character_count"] == len(abstract)
+    assert fields["ai_disclosure"] == en.split("## AI assistance disclosure\n\n", 1)[1].split("\n\n", 1)[0]
+    assert "OpenAI ChatGPT and Codex" in abstract
+    assert fields["funding_statement"]["author_confirmed"] is False and fields["competing_interests"]["author_confirmed"] is False
     pattern = r"^\$\$(.*?)\$\$$"
     en_equations = re.findall(pattern, en, flags=re.M)
     assert en_equations == re.findall(pattern, ru, flags=re.M), "Translation equation drift"
