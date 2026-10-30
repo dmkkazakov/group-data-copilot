@@ -6,6 +6,16 @@ It collects and structures information about a corporate group: legal entities, 
 
 The project is designed as a pet / R&D project for demonstrating practical agentic workflows in corporate credit analysis.
 
+## Public-source research paper
+
+The [MCP and harness research package](research/mcp_harness/README.md) contains an English paper prepared for SSRN, a Russian companion, five verifiable public cases, normalized evidence, reproducible calculations and 30 software tests. Cases cover MTS, HSBC, Berkshire Hathaway, Tencent and Singtel. Historical dates, semantic limits and an unresolved arithmetic discrepancy are explicit.
+
+- [English PDF](research/mcp_harness/artifacts/Corporate_Groups_SSRN_EN.pdf)
+- [Russian Word document](research/mcp_harness/artifacts/MCP_Harness_Corporate_Groups.docx)
+- [Data and code](research/mcp_harness/README.md)
+
+The research MCP server replays curated evidence. It does not add live registry connectors to the existing application. No SSRN submission or acceptance is claimed.
+
 ## What it does
 
 Given a group name or tax identifier, the agent can:
@@ -103,3 +113,4 @@ The agent prepares a first-pass evidence package.
 ## License
 
 MIT
+

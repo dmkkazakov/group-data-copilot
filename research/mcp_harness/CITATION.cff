@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "Please cite the working paper and specify the repository commit used."
+type: article
+title: "Evidence Constrained Reconstruction of Corporate Groups with MCP and an Agent Harness"
+authors:
+  - family-names: Kazakov
+    given-names: Dmitry
+version: 1.0.0
+date-released: 2026-10-30
+repository-code: "https://github.com/dmkkazakov/group-data-copilot"
+url: "https://github.com/dmkkazakov/group-data-copilot/tree/main/research/mcp_harness"
+keywords:
+  - corporate ownership
+  - public disclosures
+  - Model Context Protocol
+  - evidence provenance
+  - agent harness

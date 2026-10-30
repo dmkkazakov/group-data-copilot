@@ -1,0 +1,42 @@
+[
+  {
+    "source_id": "HSBC_AR",
+    "url": "https://www.about.hsbc.com.hk/-/media/hong-kong/en/investor-relations/annual-results-2024/250219-annual-report-and-accounts-2024-en.pdf?sc_lang=en-GB",
+    "retrieved": "2026-10-30",
+    "size_bytes": 8540777,
+    "sha256": "ec3dea0b3b8aa6817cbfab2d7a89a5f5d24adac16eb5b522c4bf8e17ac6fcc8c",
+    "redistributed": false
+  },
+  {
+    "source_id": "BRK_PROXY",
+    "url": "https://www.berkshirehathaway.com/meet01/2025proxystatement.pdf",
+    "retrieved": "2026-10-30",
+    "size_bytes": 150221,
+    "sha256": "a2d1ea801153eceab17d7193c3cc0c4f15949f27b41bfb19e2914e6e21852f94",
+    "redistributed": false
+  },
+  {
+    "source_id": "BRK_AR",
+    "url": "https://www.berkshirehathaway.com/2024ar/2024ar.pdf",
+    "retrieved": "2026-10-30",
+    "size_bytes": 1852116,
+    "sha256": "6aa0a501680c50a57e0a1a2e841b46800e1fed828a8a7889d83d8eae7953e4bb",
+    "redistributed": false
+  },
+  {
+    "source_id": "TENCENT_AR",
+    "url": "https://static.www.tencent.com/uploads/2025/04/08/1132b72b565389d1b913aea60a648d73.pdf",
+    "retrieved": "2026-10-30",
+    "size_bytes": 4754924,
+    "sha256": "95b0652da8294527d150a56a9de293627b53e73b4a4c21202c153ea6eb4e9134",
+    "redistributed": false
+  },
+  {
+    "source_id": "SINGTEL_AR",
+    "url": "https://links.sgx.com/1.0.0/corporate-announcements/45HXB745U21ORPFV/850270_Singtel%20Annual%20Report%202025.pdf",
+    "retrieved": "2026-10-30",
+    "size_bytes": 7257685,
+    "sha256": "b33d6d7472240bdbbd4f5d1c109c8e1bb81c44c4aadf57bb538b5ae324ee9474",
+    "redistributed": false
+  }
+]

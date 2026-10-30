@@ -1,0 +1,719 @@
+{
+  "schema_version": "1.0.0",
+  "curation": "AI-assisted manual transcription from public primary sources; not an automated extraction benchmark",
+  "sources": {
+    "MTS_CAP": {
+      "title": "MTS Annual Report 2024 — Capital and Securities",
+      "url": "https://ar2024.mts.ru/en/corporate-governance/capital-and-securities/",
+      "locator": "Shareholder Capital; table at 31 December 2024; footnotes 1 and 2",
+      "published": null,
+      "retrieved": "2026-10-30",
+      "origin": "MTS Annual Report 2024",
+      "access_note": "Official indexed HTML table and footnotes inspected; direct retrieval returned 502/503. No original byte hash claimed."
+    },
+    "MTS_NEWS": {
+      "title": "MTS corporate restructuring announcement",
+      "url": "https://nao.mts.ru/about/media-centr/soobshheniya-kompanii/novosti-mts-v-rossii-i-mire/2024-12-20/mts-prodolzhaet-transformaciyu-korporativnoj-struktury",
+      "locator": "20 December 2024; paragraphs on appointments and Ecosystem MTS",
+      "published": "2024-12-20",
+      "retrieved": "2026-10-30",
+      "origin": "MTS corporate restructuring announcement"
+    },
+    "HSBC_SUB": {
+      "title": "HSBC 2024 Annual Report — Note 19",
+      "url": "https://www.sec.gov/Archives/edgar/data/1089113/000108911325000040/R98.htm",
+      "locator": "Main subsidiaries; footnotes 1–3",
+      "published": null,
+      "retrieved": "2026-10-30",
+      "origin": "HSBC annual report 2024"
+    },
+    "HSBC_AR": {
+      "title": "HSBC Holdings plc Annual Report and Accounts 2024",
+      "url": "https://www.about.hsbc.com.hk/-/media/hong-kong/en/investor-relations/annual-results-2024/250219-annual-report-and-accounts-2024-en.pdf?sc_lang=en-GB",
+      "locator": "printed pp. 237–238, 305, 320; PDF pages are printed pages + 2",
+      "published": "2025-02-19",
+      "retrieved": "2026-10-30",
+      "origin": "HSBC annual report 2024"
+    },
+    "BRK_PROXY": {
+      "title": "Berkshire Hathaway 2025 Proxy Statement",
+      "url": "https://www.berkshirehathaway.com/meet01/2025proxystatement.pdf",
+      "locator": "printed pp. 1 and 11; share counts and beneficial ownership at 5 March 2025",
+      "published": "2025-03-14",
+      "retrieved": "2026-10-30",
+      "origin": "Berkshire Hathaway 2025 Proxy Statement"
+    },
+    "BRK_AR": {
+      "title": "Berkshire Hathaway 2024 Annual Report",
+      "url": "https://www.berkshirehathaway.com/2024ar/2024ar.pdf",
+      "locator": "K-19 (Pilot), K-80 (BHE), inside back cover (officers)",
+      "published": "2025-02-22",
+      "retrieved": "2026-10-30",
+      "origin": "Berkshire Hathaway 2024 Annual Report"
+    },
+    "TENCENT_AR": {
+      "title": "Tencent Holdings Limited Annual Report 2024",
+      "url": "https://static.www.tencent.com/uploads/2025/04/08/1132b72b565389d1b913aea60a648d73.pdf",
+      "locator": "printed pp. 2, 60, 63, 67–69, 71, 76, 114; PDF pages = printed + 1",
+      "published": "2025-04-08",
+      "retrieved": "2026-10-30",
+      "origin": "Tencent Holdings Limited Annual Report 2024"
+    },
+    "SINGTEL_AR": {
+      "title": "Singapore Telecommunications Limited Annual Report 2025",
+      "url": "https://links.sgx.com/1.0.0/corporate-announcements/45HXB745U21ORPFV/850270_Singtel%20Annual%20Report%202025.pdf",
+      "locator": "printed pp. 227, 230, 270–272; PDF pages = printed + 2",
+      "published": "2025-06-30",
+      "retrieved": "2026-10-30",
+      "origin": "Singapore Telecommunications Limited Annual Report 2025"
+    }
+  },
+  "claims": [
+    {
+      "id": "M01",
+      "case": "RU",
+      "subject": "Sistema PJSFC",
+      "relation": "interest_in",
+      "object": "MTS PJSC",
+      "value": {
+        "shares": 841019563,
+        "reported_pct": "42.09"
+      },
+      "basis": "aggregate_including_subsidiary",
+      "valid_on": "2024-12-31",
+      "known_on": "2026-10-30",
+      "source_id": "MTS_CAP",
+      "locator": "Shareholder Capital; table at 31 December 2024; footnotes 1 and 2",
+      "status": "source_reported"
+    },
+    {
+      "id": "M02",
+      "case": "RU",
+      "subject": "MGTS PJSC",
+      "relation": "interest_in",
+      "object": "MTS PJSC",
+      "value": {
+        "shares": 5452327,
+        "reported_pct": "0.27"
+      },
+      "basis": "reported_holder",
+      "valid_on": "2024-12-31",
+      "known_on": "2026-10-30",
+      "source_id": "MTS_CAP",
+      "locator": "Shareholder Capital; table at 31 December 2024; footnotes 1 and 2",
+      "status": "source_reported"
+    },
+    {
+      "id": "M03",
+      "case": "RU",
+      "subject": "MTS Ecosystem LLC",
+      "relation": "interest_in",
+      "object": "MTS PJSC",
+      "value": {
+        "shares": 111145664,
+        "reported_pct": "5.56"
+      },
+      "basis": "reported_holder",
+      "valid_on": "2024-12-31",
+      "known_on": "2026-10-30",
+      "source_id": "MTS_CAP",
+      "locator": "Shareholder Capital; table at 31 December 2024; footnotes 1 and 2",
+      "status": "source_reported"
+    },
+    {
+      "id": "M04",
+      "case": "RU",
+      "subject": "Bastion LLC",
+      "relation": "interest_in",
+      "object": "MTS PJSC",
+      "value": {
+        "shares": 2348947,
+        "reported_pct": "0.12"
+      },
+      "basis": "reported_holder",
+      "valid_on": "2024-12-31",
+      "known_on": "2026-10-30",
+      "source_id": "MTS_CAP",
+      "locator": "Shareholder Capital; table at 31 December 2024; footnotes 1 and 2",
+      "status": "source_reported"
+    },
+    {
+      "id": "M05",
+      "case": "RU",
+      "subject": "MTS PJSC",
+      "relation": "interest_in",
+      "object": "MTS PJSC",
+      "value": {
+        "shares": 38645191,
+        "reported_pct": "1.93"
+      },
+      "basis": "own_shares",
+      "valid_on": "2024-12-31",
+      "known_on": "2026-10-30",
+      "source_id": "MTS_CAP",
+      "locator": "Shareholder Capital; table at 31 December 2024; footnotes 1 and 2",
+      "status": "source_reported"
+    },
+    {
+      "id": "M06",
+      "case": "RU",
+      "subject": "Free circulation",
+      "relation": "interest_in",
+      "object": "MTS PJSC",
+      "value": {
+        "shares": 999769883,
+        "reported_pct": "50.03"
+      },
+      "basis": "residual_category",
+      "valid_on": "2024-12-31",
+      "known_on": "2026-10-30",
+      "source_id": "MTS_CAP",
+      "locator": "Shareholder Capital; table at 31 December 2024; footnotes 1 and 2",
+      "status": "source_reported"
+    },
+    {
+      "id": "M07",
+      "case": "RU",
+      "subject": "Sistema Telecom Assets LLC",
+      "relation": "interest_in",
+      "object": "MTS PJSC",
+      "value": {
+        "reported_pct": "11.03"
+      },
+      "basis": "included_in_M01",
+      "valid_on": "2024-12-31",
+      "known_on": "2026-10-30",
+      "source_id": "MTS_CAP",
+      "locator": "Shareholder Capital; table at 31 December 2024; footnotes 1 and 2",
+      "status": "source_reported"
+    },
+    {
+      "id": "M08",
+      "case": "RU",
+      "subject": "MTS PJSC",
+      "relation": "subsidiary",
+      "object": "MGTS PJSC",
+      "value": null,
+      "basis": "directness_and_percentage_unspecified",
+      "valid_on": "2024-12-31",
+      "known_on": "2026-10-30",
+      "source_id": "MTS_CAP",
+      "locator": "Shareholder Capital; table at 31 December 2024; footnotes 1 and 2",
+      "status": "source_reported"
+    },
+    {
+      "id": "M09",
+      "case": "RU",
+      "subject": "MTS PJSC",
+      "relation": "subsidiary",
+      "object": "MTS Ecosystem LLC",
+      "value": null,
+      "basis": "directness_and_percentage_unspecified",
+      "valid_on": "2024-12-31",
+      "known_on": "2026-10-30",
+      "source_id": "MTS_CAP",
+      "locator": "Shareholder Capital; table at 31 December 2024; footnotes 1 and 2",
+      "status": "source_reported"
+    },
+    {
+      "id": "M10",
+      "case": "RU",
+      "subject": "MTS PJSC",
+      "relation": "subsidiary",
+      "object": "Bastion LLC",
+      "value": null,
+      "basis": "directness_and_percentage_unspecified",
+      "valid_on": "2024-12-31",
+      "known_on": "2026-10-30",
+      "source_id": "MTS_CAP",
+      "locator": "Shareholder Capital; table at 31 December 2024; footnotes 1 and 2",
+      "status": "source_reported"
+    },
+    {
+      "id": "M11",
+      "case": "RU",
+      "subject": "Inessa Galaktionova",
+      "relation": "management_role",
+      "object": "MTS PJSC",
+      "value": "General Director",
+      "basis": "appointment_reported",
+      "valid_on": "2024-12-20",
+      "known_on": "2026-10-30",
+      "source_id": "MTS_NEWS",
+      "locator": "20 December 2024; paragraphs on appointments and Ecosystem MTS",
+      "status": "source_reported"
+    },
+    {
+      "id": "M12",
+      "case": "RU",
+      "subject": "Vyacheslav Nikolaev",
+      "relation": "management_role",
+      "object": "MTS PJSC",
+      "value": "Chairman of the Board",
+      "basis": "role_reported",
+      "valid_on": "2024-12-20",
+      "known_on": "2026-10-30",
+      "source_id": "MTS_NEWS",
+      "locator": "20 December 2024; paragraphs on appointments and Ecosystem MTS",
+      "status": "source_reported"
+    },
+    {
+      "id": "H01",
+      "case": "UK",
+      "subject": "HSBC Holdings plc group",
+      "relation": "interest_in",
+      "object": "HSBC Bank plc",
+      "value": {
+        "reported_pct": "100"
+      },
+      "basis": "group_interest_direct_or_indirect",
+      "valid_on": "2024-12-31",
+      "known_on": "2026-10-30",
+      "source_id": "HSBC_SUB",
+      "locator": "Main subsidiaries; footnotes 1–3",
+      "status": "source_reported"
+    },
+    {
+      "id": "H02",
+      "case": "UK",
+      "subject": "HSBC Holdings plc group",
+      "relation": "interest_in",
+      "object": "HSBC UK Bank plc",
+      "value": {
+        "reported_pct": "100"
+      },
+      "basis": "group_interest_direct_or_indirect",
+      "valid_on": "2024-12-31",
+      "known_on": "2026-10-30",
+      "source_id": "HSBC_SUB",
+      "locator": "Main subsidiaries; footnotes 1–3",
+      "status": "source_reported"
+    },
+    {
+      "id": "H03",
+      "case": "UK",
+      "subject": "HSBC Holdings plc group",
+      "relation": "interest_in",
+      "object": "Hang Seng Bank Limited",
+      "value": {
+        "reported_pct": "63.12"
+      },
+      "basis": "group_interest_direct_or_indirect",
+      "valid_on": "2024-12-31",
+      "known_on": "2026-10-30",
+      "source_id": "HSBC_SUB",
+      "locator": "Main subsidiaries; footnotes 1–3",
+      "status": "source_reported"
+    },
+    {
+      "id": "H04",
+      "case": "UK",
+      "subject": "BlackRock Inc.",
+      "relation": "interest_in",
+      "object": "HSBC Holdings plc",
+      "value": {
+        "shares": 1615527141,
+        "reported_pct": "8.99"
+      },
+      "basis": "SFO_long_position",
+      "valid_on": "2024-12-19",
+      "known_on": "2026-10-30",
+      "source_id": "HSBC_AR",
+      "locator": "printed p. 320; notice on 24 December 2024",
+      "status": "source_reported"
+    },
+    {
+      "id": "H05",
+      "case": "UK",
+      "subject": "Ping An Asset Management Co. Ltd.",
+      "relation": "interest_in",
+      "object": "HSBC Holdings plc",
+      "value": {
+        "shares": 1502584731,
+        "reported_pct": "7.98"
+      },
+      "basis": "SFO_long_position",
+      "valid_on": "2024-05-07",
+      "known_on": "2026-10-30",
+      "source_id": "HSBC_AR",
+      "locator": "printed p. 320; notice on 10 May 2024",
+      "status": "source_reported"
+    },
+    {
+      "id": "H06",
+      "case": "UK",
+      "subject": "Georges Elhedery",
+      "relation": "management_role",
+      "object": "HSBC Holdings plc",
+      "value": "Group CEO",
+      "basis": "role_at_period_end",
+      "valid_on": "2024-12-31",
+      "known_on": "2026-10-30",
+      "source_id": "HSBC_AR",
+      "locator": "printed p. 305; CEO from 2 September 2024",
+      "status": "source_reported"
+    },
+    {
+      "id": "H07",
+      "case": "UK",
+      "subject": "Mark Tucker",
+      "relation": "management_role",
+      "object": "HSBC Holdings plc",
+      "value": "Group Chairman",
+      "basis": "role_at_period_end",
+      "valid_on": "2024-12-31",
+      "known_on": "2026-10-30",
+      "source_id": "HSBC_AR",
+      "locator": "printed p. 237",
+      "status": "source_reported"
+    },
+    {
+      "id": "B01",
+      "case": "US",
+      "subject": "Warren Buffett",
+      "relation": "interest_in",
+      "object": "Berkshire Hathaway Inc.",
+      "value": {
+        "class_A": 206359,
+        "class_B": 951,
+        "economic_pct": "14.4",
+        "vote_pct": "30.4"
+      },
+      "basis": "class_weighted_beneficial_interest",
+      "valid_on": "2025-03-05",
+      "known_on": "2026-10-30",
+      "source_id": "BRK_PROXY",
+      "locator": "printed pp. 1 and 11; share counts and beneficial ownership at 5 March 2025",
+      "status": "source_reported"
+    },
+    {
+      "id": "B02",
+      "case": "US",
+      "subject": "Berkshire Hathaway Inc.",
+      "relation": "interest_in",
+      "object": "Berkshire Hathaway Energy Company",
+      "value": {
+        "reported_pct": "100"
+      },
+      "basis": "wholly_owned_directness_unspecified",
+      "valid_on": "2024-12-31",
+      "known_on": "2026-10-30",
+      "source_id": "BRK_AR",
+      "locator": "K-19 (Pilot), K-80 (BHE), inside back cover (officers)",
+      "status": "source_reported"
+    },
+    {
+      "id": "B03",
+      "case": "US",
+      "subject": "Berkshire Hathaway Inc.",
+      "relation": "interest_in",
+      "object": "Pilot Travel Centers LLC",
+      "value": {
+        "reported_pct": "100"
+      },
+      "basis": "indirect_wholly_owned",
+      "valid_on": "2024-12-31",
+      "known_on": "2026-10-30",
+      "source_id": "BRK_AR",
+      "locator": "K-19 (Pilot), K-80 (BHE), inside back cover (officers)",
+      "status": "source_reported"
+    },
+    {
+      "id": "B04",
+      "case": "US",
+      "subject": "Warren Buffett",
+      "relation": "management_role",
+      "object": "Berkshire Hathaway Inc.",
+      "value": "Chairman and CEO",
+      "basis": "report_officer_list",
+      "valid_on": "2025-02-22",
+      "known_on": "2026-10-30",
+      "source_id": "BRK_AR",
+      "locator": "K-19 (Pilot), K-80 (BHE), inside back cover (officers)",
+      "status": "source_reported"
+    },
+    {
+      "id": "B05",
+      "case": "US",
+      "subject": "Gregory Abel",
+      "relation": "management_role",
+      "object": "Berkshire Hathaway Inc.",
+      "value": "Vice Chairman Non-Insurance Operations",
+      "basis": "report_officer_list",
+      "valid_on": "2025-02-22",
+      "known_on": "2026-10-30",
+      "source_id": "BRK_AR",
+      "locator": "K-19 (Pilot), K-80 (BHE), inside back cover (officers)",
+      "status": "source_reported"
+    },
+    {
+      "id": "T01",
+      "case": "CN",
+      "subject": "Ma Huateng",
+      "relation": "interest_in",
+      "object": "Tencent Holdings Limited",
+      "value": {
+        "shares": 804859700,
+        "reported_pct": "8.72"
+      },
+      "basis": "corporate_attributed_interest",
+      "valid_on": "2024-12-31",
+      "known_on": "2026-10-30",
+      "source_id": "TENCENT_AR",
+      "locator": "printed pp. 67–68",
+      "status": "source_reported"
+    },
+    {
+      "id": "T02",
+      "case": "CN",
+      "subject": "Advance Data Services Limited",
+      "relation": "interest_in",
+      "object": "Tencent Holdings Limited",
+      "value": {
+        "shares": 709859700
+      },
+      "basis": "direct_shares",
+      "valid_on": "2024-12-31",
+      "known_on": "2026-10-30",
+      "source_id": "TENCENT_AR",
+      "locator": "printed p. 68 note 1",
+      "status": "source_reported"
+    },
+    {
+      "id": "T03",
+      "case": "CN",
+      "subject": "Ma Huateng Global Foundation",
+      "relation": "interest_in",
+      "object": "Tencent Holdings Limited",
+      "value": {
+        "shares": 95000000
+      },
+      "basis": "direct_shares",
+      "valid_on": "2024-12-31",
+      "known_on": "2026-10-30",
+      "source_id": "TENCENT_AR",
+      "locator": "printed p. 68 note 1",
+      "status": "source_reported"
+    },
+    {
+      "id": "T04",
+      "case": "CN",
+      "subject": "Ma Huateng",
+      "relation": "interest_in",
+      "object": "Advance Data Services Limited",
+      "value": {
+        "reported_pct": "100"
+      },
+      "basis": "direct_equity",
+      "valid_on": "2024-12-31",
+      "known_on": "2026-10-30",
+      "source_id": "TENCENT_AR",
+      "locator": "printed p. 68 note 1",
+      "status": "source_reported"
+    },
+    {
+      "id": "T05",
+      "case": "CN",
+      "subject": "Advance Data Services Limited",
+      "relation": "interest_in",
+      "object": "Ma Huateng Global Foundation",
+      "value": {
+        "reported_pct": "100"
+      },
+      "basis": "direct_equity",
+      "valid_on": "2024-12-31",
+      "known_on": "2026-10-30",
+      "source_id": "TENCENT_AR",
+      "locator": "printed p. 68 note 1",
+      "status": "source_reported"
+    },
+    {
+      "id": "T06",
+      "case": "CN",
+      "subject": "MIH Internet Holdings B.V.",
+      "relation": "interest_in",
+      "object": "Tencent Holdings Limited",
+      "value": {
+        "shares": 2214863800,
+        "reported_pct": "24.01"
+      },
+      "basis": "corporate_long_position",
+      "valid_on": "2024-12-31",
+      "known_on": "2026-10-30",
+      "source_id": "TENCENT_AR",
+      "locator": "printed p. 76; same block attributed to Prosus and Naspers",
+      "status": "source_reported"
+    },
+    {
+      "id": "T07",
+      "case": "CN",
+      "subject": "Ma Huateng",
+      "relation": "interest_in",
+      "object": "Shenzhen Tencent Computer Systems Company Limited",
+      "value": {
+        "reported_pct": "54.29"
+      },
+      "basis": "registered_equity",
+      "valid_on": "2024-12-31",
+      "known_on": "2026-10-30",
+      "source_id": "TENCENT_AR",
+      "locator": "printed pp. 69 and 71; Tencent Computer",
+      "status": "source_reported"
+    },
+    {
+      "id": "T08",
+      "case": "CN",
+      "subject": "Tencent group",
+      "relation": "contractual_control",
+      "object": "Shenzhen Tencent Computer Systems Company Limited",
+      "value": null,
+      "basis": "structure_contracts",
+      "valid_on": "2024-12-31",
+      "known_on": "2026-10-30",
+      "source_id": "TENCENT_AR",
+      "locator": "printed pp. 69–72; no inferred equity percentage",
+      "status": "source_reported"
+    },
+    {
+      "id": "T09",
+      "case": "CN",
+      "subject": "Ma Huateng",
+      "relation": "management_role",
+      "object": "Tencent Holdings Limited",
+      "value": "Chairman and CEO",
+      "basis": "annual_report_biography",
+      "valid_on": "2025-04-08",
+      "known_on": "2026-10-30",
+      "source_id": "TENCENT_AR",
+      "locator": "printed p. 60",
+      "status": "source_reported"
+    },
+    {
+      "id": "T10",
+      "case": "CN",
+      "subject": "Lau Chi Ping Martin",
+      "relation": "management_role",
+      "object": "Tencent Holdings Limited",
+      "value": "President",
+      "basis": "annual_report_biography",
+      "valid_on": "2025-04-08",
+      "known_on": "2026-10-30",
+      "source_id": "TENCENT_AR",
+      "locator": "printed p. 63",
+      "status": "source_reported"
+    },
+    {
+      "id": "S01",
+      "case": "SG",
+      "subject": "Temasek Holdings (Private) Limited",
+      "relation": "interest_in",
+      "object": "Singapore Telecommunications Limited",
+      "value": {
+        "shares": 8304071181,
+        "reported_pct": "50.29"
+      },
+      "basis": "direct_interest_ex_treasury_denominator",
+      "valid_on": "2025-06-02",
+      "known_on": "2026-10-30",
+      "source_id": "SINGTEL_AR",
+      "locator": "printed p. 270",
+      "status": "source_reported"
+    },
+    {
+      "id": "S02",
+      "case": "SG",
+      "subject": "Temasek Holdings (Private) Limited",
+      "relation": "interest_in",
+      "object": "Singapore Telecommunications Limited",
+      "value": {
+        "shares": 277171369
+      },
+      "basis": "deemed_interest_not_cashflow_weight",
+      "valid_on": "2025-06-02",
+      "known_on": "2026-10-30",
+      "source_id": "SINGTEL_AR",
+      "locator": "printed p. 270; deemed through subsidiaries and associates",
+      "status": "source_reported"
+    },
+    {
+      "id": "S03",
+      "case": "SG",
+      "subject": "Singtel group",
+      "relation": "interest_in",
+      "object": "NCS Pte. Ltd.",
+      "value": {
+        "reported_pct": "100"
+      },
+      "basis": "group_effective_equity",
+      "valid_on": "2025-03-31",
+      "known_on": "2026-10-30",
+      "source_id": "SINGTEL_AR",
+      "locator": "printed p. 227 note 46.1",
+      "status": "source_reported"
+    },
+    {
+      "id": "S04",
+      "case": "SG",
+      "subject": "Singtel group",
+      "relation": "interest_in",
+      "object": "Singtel Optus Pty Limited",
+      "value": {
+        "reported_pct": "100"
+      },
+      "basis": "group_effective_equity",
+      "valid_on": "2025-03-31",
+      "known_on": "2026-10-30",
+      "source_id": "SINGTEL_AR",
+      "locator": "printed p. 230 note 46.2",
+      "status": "source_reported"
+    },
+    {
+      "id": "S05",
+      "case": "SG",
+      "subject": "Lee Theng Kiat",
+      "relation": "management_role",
+      "object": "Singapore Telecommunications Limited",
+      "value": "Chairman",
+      "basis": "corporate_information_snapshot",
+      "valid_on": "2025-06-08",
+      "known_on": "2026-10-30",
+      "source_id": "SINGTEL_AR",
+      "locator": "printed p. 272; section dated 8 June 2025",
+      "status": "source_reported"
+    },
+    {
+      "id": "S06",
+      "case": "SG",
+      "subject": "Yuen Kuan Moon",
+      "relation": "management_role",
+      "object": "Singapore Telecommunications Limited",
+      "value": "Group CEO",
+      "basis": "corporate_information_snapshot",
+      "valid_on": "2025-06-08",
+      "known_on": "2026-10-30",
+      "source_id": "SINGTEL_AR",
+      "locator": "printed p. 272; section dated 8 June 2025",
+      "status": "source_reported"
+    }
+  ],
+  "constants": {
+    "MTS_total_shares": 1998381575,
+    "Berkshire_A_outstanding": 544953,
+    "Berkshire_B_outstanding": 1339905639,
+    "Berkshire_A_economic_weight": 1500,
+    "Berkshire_A_vote_weight": 10000,
+    "Tencent_total_shares": 9224914953,
+    "Singtel_total_issued_shares": 16514634755,
+    "Singtel_treasury_shares": 2059079
+  },
+  "constant_evidence": {
+    "MTS_total_shares": "MTS_CAP",
+    "Berkshire_A_outstanding": "BRK_PROXY p. 1",
+    "Berkshire_B_outstanding": "BRK_PROXY p. 1",
+    "Berkshire_A_economic_weight": "BRK_PROXY p. 11; class conversion basis",
+    "Berkshire_A_vote_weight": "BRK_PROXY p. 1",
+    "Tencent_total_shares": "TENCENT_AR p. 68 note 7",
+    "Singtel_total_issued_shares": "SINGTEL_AR p. 271; denominator excludes treasury under p. 270 note 1",
+    "Singtel_treasury_shares": "SINGTEL_AR pp. 270–271"
+  }
+}

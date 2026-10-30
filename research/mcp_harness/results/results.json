@@ -1,0 +1,58 @@
+{
+  "claims": 40,
+  "sources": 8,
+  "cases": 5,
+  "MTS": {
+    "sum_shares": 1998381575,
+    "total_shares": 1998381575,
+    "rounded_sum_pct": "100",
+    "naive_double_count_pct": "11103/100"
+  },
+  "HSBC": {
+    "group_Hang_Seng_pct": "63.12",
+    "direct_parent_identified_by_selected_table": false,
+    "shareholder_snapshot_dates": [
+      "2024-12-19",
+      "2024-05-07"
+    ]
+  },
+  "Berkshire": {
+    "economic_pct": 14.348232,
+    "vote_pct": 30.394146,
+    "reported_economic_pct": "14.4",
+    "economic_reconciliation": "unresolved_outside_direct_one_decimal_rounding_interval",
+    "economic_difference_pp": 0.051768,
+    "vote_to_economic_ratio": 2.11832,
+    "economic_fraction": "6069401/42300689",
+    "vote_fraction": "121387703/399378567"
+  },
+  "Tencent": {
+    "Ma_total_shares": 804859700,
+    "Ma_pct": 8.724847,
+    "MIH_pct": 24.009585,
+    "registered_OPCO_pct": "54.29",
+    "VIE_equity_percentage": null
+  },
+  "Singtel": {
+    "denominator_ex_treasury": 16512575676,
+    "direct_pct": 50.289375,
+    "deemed_pct": 1.678547,
+    "direct_plus_deemed_disclosure_pct": 51.967923,
+    "dates": [
+      "2025-03-31",
+      "2025-06-02",
+      "2025-06-08"
+    ]
+  },
+  "synthetic_cycle": {
+    "outside_A": [
+      "40/49",
+      "4/49"
+    ],
+    "outside_B": [
+      "9/49",
+      "45/49"
+    ]
+  },
+  "corpus_sha256": "e2127d3b95176ade3cd258cd60417553a56f4d5b4533f6a7d94a8288ee6355c0"
+}

@@ -1,0 +1,35 @@
+test_all_assertions_have_primary_provenance (test_research.ResearchTests.test_all_assertions_have_primary_provenance) ... ok
+test_berkshire_rounding_discrepancy_preserved (test_research.ResearchTests.test_berkshire_rounding_discrepancy_preserved) ... ok
+test_berkshire_votes_not_economic (test_research.ResearchTests.test_berkshire_votes_not_economic) ... ok
+test_changed_checkpoint_rejected (test_research.ResearchTests.test_changed_checkpoint_rejected) ... ok
+test_changed_entity_rejected (test_research.ResearchTests.test_changed_entity_rejected) ... ok
+test_changed_value_rejected (test_research.ResearchTests.test_changed_value_rejected) ... ok
+test_closed_cycle_rejected (test_research.ResearchTests.test_closed_cycle_rejected) ... ok
+test_cross_holding_solution_and_conservation (test_research.ResearchTests.test_cross_holding_solution_and_conservation) ... ok
+test_direct_path (test_research.ResearchTests.test_direct_path) ... ok
+test_disconnected_path_rejected (test_research.ResearchTests.test_disconnected_path_rejected) ... ok
+test_empty_class_denominator_rejected (test_research.ResearchTests.test_empty_class_denominator_rejected) ... ok
+test_end_to_end_mcp_and_resume (test_research.ResearchTests.test_end_to_end_mcp_and_resume) ... ok
+test_hsbc_group_interest_not_direct (test_research.ResearchTests.test_hsbc_group_interest_not_direct) ... ok
+test_hsbc_notice_not_period_end_snapshot (test_research.ResearchTests.test_hsbc_notice_not_period_end_snapshot) ... ok
+test_impossible_class_count_rejected (test_research.ResearchTests.test_impossible_class_count_rejected) ... ok
+test_missing_evidence_rejected (test_research.ResearchTests.test_missing_evidence_rejected) ... ok
+test_missing_percentage_stays_missing (test_research.ResearchTests.test_missing_percentage_stays_missing) ... ok
+test_mts_aggregate_not_direct (test_research.ResearchTests.test_mts_aggregate_not_direct) ... ok
+test_mts_double_count_exceeds_partition (test_research.ResearchTests.test_mts_double_count_exceeds_partition) ... ok
+test_mts_exact_partition (test_research.ResearchTests.test_mts_exact_partition) ... ok
+test_no_upgrade_to_confirmed_ubo (test_research.ResearchTests.test_no_upgrade_to_confirmed_ubo) ... ok
+test_not_known_before_ingestion (test_research.ResearchTests.test_not_known_before_ingestion) ... ok
+test_server_initialization_required (test_research.ResearchTests.test_server_initialization_required) ... ok
+test_server_schema_rejects_arbitrary_url (test_research.ResearchTests.test_server_schema_rejects_arbitrary_url) ... ok
+test_singtel_deemed_not_direct (test_research.ResearchTests.test_singtel_deemed_not_direct) ... ok
+test_singtel_direct_percentage (test_research.ResearchTests.test_singtel_direct_percentage) ... ok
+test_singtel_june_cannot_backfill_march (test_research.ResearchTests.test_singtel_june_cannot_backfill_march) ... ok
+test_tencent_published_rounding (test_research.ResearchTests.test_tencent_published_rounding) ... ok
+test_tencent_share_reconciliation (test_research.ResearchTests.test_tencent_share_reconciliation) ... ok
+test_tencent_vie_not_equity (test_research.ResearchTests.test_tencent_vie_not_equity) ... ok
+
+----------------------------------------------------------------------
+Ran 30 tests in 0.178s
+
+OK
