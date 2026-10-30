@@ -1,116 +1,56 @@
 # Group Data Copilot
 
-**Group Data Copilot** is a lightweight AI-ready data agent for corporate banking and credit analytics.
+Public-source corporate-group research and a separate offline CSV analysis prototype by Dmitry Kazakov.
 
-It collects and structures information about a corporate group: legal entities, ownership links, roles inside the group, financial indicators, risk flags, and missing-data gaps.
+## Research paper and reproducible evidence
 
-The project is designed as a pet / R&D project for demonstrating practical agentic workflows in corporate credit analysis.
+The [research package](research/mcp_harness/README.md) contains an English working paper prepared for SSRN, a Russian companion and five historical public cases: MTS, HSBC, Berkshire Hathaway, Tencent and Singtel. It includes 40 dated assertions, primary-source locators, 16 equations, a read-only MCP server and a deterministic harness.
 
-## Public-source research paper
+- [English paper PDF](research/mcp_harness/artifacts/Corporate_Groups_SSRN_EN.pdf)
+- [Russian paper PDF](research/mcp_harness/artifacts/MCP_Harness_Corporate_Groups_RU.pdf)
+- [Russian editable Word document](research/mcp_harness/artifacts/MCP_Harness_Corporate_Groups.docx)
+- [Data and results](research/mcp_harness/README.md)
+- [Audit findings and corrections](research/mcp_harness/AUDIT.md)
+- [SSRN submission fields](research/mcp_harness/SSRN_SUBMISSION.md)
 
-The [MCP and harness research package](research/mcp_harness/README.md) contains an English paper prepared for SSRN, a Russian companion, five verifiable public cases, normalized evidence, reproducible calculations and 30 software tests. Cases cover MTS, HSBC, Berkshire Hathaway, Tencent and Singtel. Historical dates, semantic limits and an unresolved arithmetic discrepancy are explicit.
+The package has 48 research tests and a controlled experiment with 520 corrupted records and 40 clean controls. These verify replay integrity and arithmetic; they do not establish autonomous extraction accuracy. The disclosed Berkshire rounding discrepancy remains unresolved. No SSRN submission or acceptance is claimed.
 
-- [English PDF](research/mcp_harness/artifacts/Corporate_Groups_SSRN_EN.pdf)
-- [Russian Word document](research/mcp_harness/artifacts/MCP_Harness_Corporate_Groups.docx)
-- [Data and code](research/mcp_harness/README.md)
+Research calculations use only the Python 3.10+ standard library:
 
-The research MCP server replays curated evidence. It does not add live registry connectors to the existing application. No SSRN submission or acceptance is claimed.
+```bash
+cd research/mcp_harness
+python3 -m unittest -v test_research.py
+python3 harness.py --output /tmp/corporate-groups-replay
+python3 evaluate.py --output /tmp/corporate-groups-replay/mutation_results.json
+python3 verify_release.py
+```
 
-## What it does
+## Offline CSV application
 
-Given a group name or tax identifier, the agent can:
+The separate `group_data_copilot` application reads a user-supplied entity perimeter, ownership edges and annual financial records. It validates identifiers and duplicate records, builds an ownership graph, calculates simple metrics and writes JSON, CSV and Markdown reports. It has 17 additional tests.
 
-- create a structured group profile;
-- ingest local CSV files with entities, ownership and financials;
-- enrich the profile with configurable open-source connectors;
-- build a group graph;
-- calculate basic concentration, leverage and data-quality metrics;
-- generate Markdown, JSON and CSV outputs;
-- prepare an analyst-style report suitable for GitHub, credit memo drafts or research demos.
+There is no live registry lookup, tax-ID search, LLM runtime or connector framework in this application. The research MCP server serves the curated research corpus; it does not add those capabilities to the CSV application.
 
-## Important note
+Financial totals are **unconsolidated sums of supplied entity records**. Currency, units, dates and accounting basis must already be aligned. Intercompany eliminations are not performed. Missing metrics remain null, and incomplete metric totals remain missing. An omitted entity can still make the supplied perimeter incomplete.
 
-The default version works fully offline using local files and mock connectors. Real integrations with official registries or paid data providers should be added through the connector interface.
-
-## Installation
+Install and run from the repository root:
 
 ```bash
 python -m venv .venv
 source .venv/bin/activate
-pip install -e .
+python -m pip install -e '.[dev]'
+python -m pytest -q tests
+group-data-copilot run --group-name "Demo Industrial Group" --data-dir examples/data --output-dir output/demo_group
 ```
 
-On Windows:
+On Windows, activate with `.venv\Scripts\activate`. The equivalent module entry point is `python -m group_data_copilot run` with the same arguments.
 
-```bash
-python -m venv .venv
-.venv\Scripts\activate
-pip install -e .
-```
+`entities.csv` is required. `ownership.csv` and `financials.csv` are optional. Identifiers are strings. The examples are synthetic. Each entity-year must occur once, ownership endpoints must exist in the supplied perimeter, and direct ownership shares must not exceed one per investee.
 
-## Quick start
+Generated files: `group_profile.json`, `entities.csv`, `ownership_edges.csv`, `financial_summary.csv`, `revenue_concentration.csv`, `risk_flags.csv` and `group_report.md`.
 
-```bash
-group-data-copilot run \
-  --group-name "Demo Industrial Group" \
-  --data-dir examples/data \
-  --output-dir output/demo_group
-```
+## Reproducibility and citation
 
-Or:
+[Research citation metadata](research/mcp_harness/CITATION.cff) identify the paper. Cite the repository commit as well as the manuscript version. The top-level [CITATION.cff](CITATION.cff) identifies the software prototype.
 
-```bash
-python -m group_data_copilot run \
-  --group-name "Demo Industrial Group" \
-  --data-dir examples/data \
-  --output-dir output/demo_group
-```
-
-## Output
-
-The agent creates:
-
-```text
-output/demo_group/
-├── group_profile.json
-├── entities.csv
-├── ownership_edges.csv
-├── financial_summary.csv
-├── risk_flags.csv
-├── group_report.md
-└── graph_edges.csv
-```
-
-## Repository structure
-
-```text
-group_data_copilot/
-├── cli.py                 # command line interface
-├── agent.py               # orchestration logic
-├── connectors.py          # connector interface and local loaders
-├── models.py              # typed data models
-├── analytics.py           # metrics and risk flags
-├── graph.py               # ownership graph builder
-└── report.py              # Markdown/JSON/CSV report writer
-```
-
-## Example use case
-
-Corporate credit analyst needs to understand a group before limit structuring:
-
-1. which legal entities are inside the group;
-2. who owns whom;
-3. where revenue and debt are concentrated;
-4. what data is missing;
-5. which entities create obvious analytical risk flags.
-
-The agent prepares a first-pass evidence package.
-
-## Demo positioning
-
-> I built a Group Data Copilot: an agentic workflow that collects, normalizes and structures corporate group data for credit analytics. It produces a reproducible group dossier with entity tables, ownership edges, financial concentration metrics, risk flags and a Markdown analyst report.
-
-## License
-
-MIT
-
+The repository's license file applies to its original code and documentation. Copyright in linked issuer reports remains with their respective rights holders; the original reports are not redistributed.

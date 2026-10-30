@@ -14,7 +14,7 @@ Author line: Independent research. No institutional affiliation is asserted.
 
 Paper date: 30 October 2026
 
-Version: 1.0
+Version: 1.1
 
 Language: English
 
@@ -26,7 +26,7 @@ Suggested JEL classifications: G32; G34; C88
 
 ## Abstract to paste
 
-Public corporate disclosures contain enough information to reconstruct useful parts of a business group, but they rarely describe ownership, voting power, management and consolidation in one consistent language. This paper develops a typed, dated evidence model and a bounded execution harness connected through the Model Context Protocol (MCP). A purposive study of MTS, HSBC, Berkshire Hathaway, Tencent and Singtel contributes a reproducible corpus of 40 assertions, five case reconstructions and executable arithmetic checks. The cases expose aggregate interests mistaken for direct holdings, different observation dates within one report, unequal share classes and contractual control without equivalent registered equity. Recalculation also leaves one numerical discrepancy open: Berkshire's disclosed share counts imply 14.348232% economic participation for Warren Buffett, while its table reports 14.4%. The released implementation preserves both values instead of silently reconciling them. Thirty software tests pass, including a real MCP subprocess exchange and checkpoint replay. These results establish reproducibility for a small curated corpus; they do not estimate the accuracy of autonomous extraction. Generative AI assisted source discovery, drafting, translation and code development. Numerical checks are reproducible in the accompanying repository.
+Public corporate disclosures contain enough information to reconstruct useful parts of a business group, but they rarely describe ownership, voting power, management and consolidation in one consistent language. This paper develops a typed, dated evidence model and a bounded execution harness connected through the Model Context Protocol (MCP). A purposive study of MTS, HSBC, Berkshire Hathaway, Tencent and Singtel contributes a reproducible corpus of 40 assertions, five case reconstructions and executable arithmetic checks. The cases expose aggregate interests mistaken for direct holdings, different observation dates within one report, unequal share classes and contractual control without equivalent registered equity. Recalculation also leaves one numerical discrepancy open: Berkshire's disclosed share counts imply 14.348232% economic participation for Warren Buffett, while its table reports 14.4%. The released implementation preserves both values instead of silently reconciling them. Forty-eight research tests pass, including a real MCP subprocess exchange and checkpoint replay. A deterministic corruption experiment rejects all 520 single-field alterations and accepts 40 unchanged controls; these controls measure replay integrity against the reference, not the truth of that reference. These results establish reproducibility for a small curated corpus; they do not estimate the accuracy of autonomous extraction. Generative AI assisted source discovery, drafting, translation and code development. Numerical checks are reproducible in the accompanying repository.
 
 ## Submission notes
 

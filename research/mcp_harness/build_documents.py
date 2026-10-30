@@ -1,7 +1,6 @@
 """Build both manuscripts from Markdown; document dependencies are optional."""
 from pathlib import Path
 import re
-import shutil
 from docx import Document
 from docx.shared import Inches, Pt, RGBColor
 from docx.oxml import OxmlElement
@@ -65,11 +64,10 @@ def table(doc,lines):
     doc.add_paragraph().paragraph_format.space_after=Pt(1)
 
 def build(lang):
-    source=(ROOT/f"paper_{lang}.md").read_text()
+    source=(ROOT/f"paper_{lang}.md").read_text(encoding="utf-8")
     if lang=="ru":
-        refs=(ROOT/"paper_en.md").read_text().split("## References\n",1)[1]
-        source=source.replace("<!-- shared references -->",refs)
-        (ROOT/"paper_ru.md").write_text(source)
+        refs=(ROOT/"paper_en.md").read_text(encoding="utf-8").split("## References\n",1)[1]
+        source=source.split("## Источники\n",1)[0] + "## Источники\n\n" + refs
     d=Document();s=d.sections[0];s.page_width=Inches(8.5);s.page_height=Inches(11)
     s.top_margin=Inches(.72);s.bottom_margin=Inches(.7);s.left_margin=Inches(.75);s.right_margin=Inches(.75)
     s.header_distance=Inches(.28);s.footer_distance=Inches(.3)
@@ -101,7 +99,7 @@ def build(lang):
             expr=line[2:-2].strip();num=re.search(r"\\tag\{(\d+)\}",expr).group(1)
             expr=re.sub(r"\s*\\tag\{\d+\}","",expr)
             img=FIG/f"equation_{num}.png"
-            if not img.exists():math_to_image("$"+expr+"$",str(img),prop=FontProperties(size=12),dpi=300,color="black")
+            math_to_image("$"+expr+"$",str(img),prop=FontProperties(size=12),dpi=300,color="black")
             w,h=Image.open(img).size
             p=d.add_paragraph();p.alignment=WD_ALIGN_PARAGRAPH.CENTER;p.paragraph_format.space_before=Pt(6);p.paragraph_format.space_after=Pt(9)
             p.add_run().add_picture(str(img),width=Inches(min(w/300,5.95)))

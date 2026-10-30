@@ -1,0 +1,89 @@
+{
+  "design": "One deliberate field corruption per assertion; deterministic controls, not held-out predictions",
+  "corpus_sha256": "57ca15f004325fc3db00cfb69557294dd07208bbbb27964df41b371c69ba3cfc",
+  "clean_controls": 40,
+  "clean_accepted": 40,
+  "corrupted_controls": 520,
+  "corrupted_rejected": 520,
+  "by_field": [
+    {
+      "mutated_field": "id",
+      "trials": 40,
+      "presence_baseline_accepted": 40,
+      "full_gate_rejected": 40
+    },
+    {
+      "mutated_field": "case",
+      "trials": 40,
+      "presence_baseline_accepted": 40,
+      "full_gate_rejected": 40
+    },
+    {
+      "mutated_field": "subject",
+      "trials": 40,
+      "presence_baseline_accepted": 40,
+      "full_gate_rejected": 40
+    },
+    {
+      "mutated_field": "relation",
+      "trials": 40,
+      "presence_baseline_accepted": 40,
+      "full_gate_rejected": 40
+    },
+    {
+      "mutated_field": "object",
+      "trials": 40,
+      "presence_baseline_accepted": 40,
+      "full_gate_rejected": 40
+    },
+    {
+      "mutated_field": "basis",
+      "trials": 40,
+      "presence_baseline_accepted": 40,
+      "full_gate_rejected": 40
+    },
+    {
+      "mutated_field": "value",
+      "trials": 40,
+      "presence_baseline_accepted": 40,
+      "full_gate_rejected": 40
+    },
+    {
+      "mutated_field": "valid_on",
+      "trials": 40,
+      "presence_baseline_accepted": 40,
+      "full_gate_rejected": 40
+    },
+    {
+      "mutated_field": "known_on",
+      "trials": 40,
+      "presence_baseline_accepted": 40,
+      "full_gate_rejected": 40
+    },
+    {
+      "mutated_field": "date_basis",
+      "trials": 40,
+      "presence_baseline_accepted": 40,
+      "full_gate_rejected": 40
+    },
+    {
+      "mutated_field": "source_id",
+      "trials": 40,
+      "presence_baseline_accepted": 40,
+      "full_gate_rejected": 40
+    },
+    {
+      "mutated_field": "locator",
+      "trials": 40,
+      "presence_baseline_accepted": 40,
+      "full_gate_rejected": 40
+    },
+    {
+      "mutated_field": "status",
+      "trials": 40,
+      "presence_baseline_accepted": 40,
+      "full_gate_rejected": 40
+    }
+  ],
+  "interpretation": "Checks exact replay integrity only. Cannot detect an error shared by reference and candidate; no extraction accuracy estimate."
+}

@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "curation": "AI-assisted manual transcription from public primary sources; not an automated extraction benchmark",
   "sources": {
     "MTS_CAP": {
@@ -38,7 +38,7 @@
     "BRK_PROXY": {
       "title": "Berkshire Hathaway 2025 Proxy Statement",
       "url": "https://www.berkshirehathaway.com/meet01/2025proxystatement.pdf",
-      "locator": "printed pp. 1 and 11; share counts and beneficial ownership at 5 March 2025",
+      "locator": "printed pp. 1 and 11 (PDF pp. 3 and 13); share counts and beneficial ownership at 5 March 2025",
       "published": "2025-03-14",
       "retrieved": "2026-10-30",
       "origin": "Berkshire Hathaway 2025 Proxy Statement"
@@ -84,7 +84,8 @@
       "known_on": "2026-10-30",
       "source_id": "MTS_CAP",
       "locator": "Shareholder Capital; table at 31 December 2024; footnotes 1 and 2",
-      "status": "source_reported"
+      "status": "source_reported",
+      "date_basis": "explicit_snapshot"
     },
     {
       "id": "M02",
@@ -101,7 +102,8 @@
       "known_on": "2026-10-30",
       "source_id": "MTS_CAP",
       "locator": "Shareholder Capital; table at 31 December 2024; footnotes 1 and 2",
-      "status": "source_reported"
+      "status": "source_reported",
+      "date_basis": "explicit_snapshot"
     },
     {
       "id": "M03",
@@ -118,7 +120,8 @@
       "known_on": "2026-10-30",
       "source_id": "MTS_CAP",
       "locator": "Shareholder Capital; table at 31 December 2024; footnotes 1 and 2",
-      "status": "source_reported"
+      "status": "source_reported",
+      "date_basis": "explicit_snapshot"
     },
     {
       "id": "M04",
@@ -135,7 +138,8 @@
       "known_on": "2026-10-30",
       "source_id": "MTS_CAP",
       "locator": "Shareholder Capital; table at 31 December 2024; footnotes 1 and 2",
-      "status": "source_reported"
+      "status": "source_reported",
+      "date_basis": "explicit_snapshot"
     },
     {
       "id": "M05",
@@ -152,7 +156,8 @@
       "known_on": "2026-10-30",
       "source_id": "MTS_CAP",
       "locator": "Shareholder Capital; table at 31 December 2024; footnotes 1 and 2",
-      "status": "source_reported"
+      "status": "source_reported",
+      "date_basis": "explicit_snapshot"
     },
     {
       "id": "M06",
@@ -169,7 +174,8 @@
       "known_on": "2026-10-30",
       "source_id": "MTS_CAP",
       "locator": "Shareholder Capital; table at 31 December 2024; footnotes 1 and 2",
-      "status": "source_reported"
+      "status": "source_reported",
+      "date_basis": "explicit_snapshot"
     },
     {
       "id": "M07",
@@ -185,7 +191,8 @@
       "known_on": "2026-10-30",
       "source_id": "MTS_CAP",
       "locator": "Shareholder Capital; table at 31 December 2024; footnotes 1 and 2",
-      "status": "source_reported"
+      "status": "source_reported",
+      "date_basis": "explicit_snapshot"
     },
     {
       "id": "M08",
@@ -199,7 +206,8 @@
       "known_on": "2026-10-30",
       "source_id": "MTS_CAP",
       "locator": "Shareholder Capital; table at 31 December 2024; footnotes 1 and 2",
-      "status": "source_reported"
+      "status": "source_reported",
+      "date_basis": "explicit_snapshot"
     },
     {
       "id": "M09",
@@ -213,7 +221,8 @@
       "known_on": "2026-10-30",
       "source_id": "MTS_CAP",
       "locator": "Shareholder Capital; table at 31 December 2024; footnotes 1 and 2",
-      "status": "source_reported"
+      "status": "source_reported",
+      "date_basis": "explicit_snapshot"
     },
     {
       "id": "M10",
@@ -227,7 +236,8 @@
       "known_on": "2026-10-30",
       "source_id": "MTS_CAP",
       "locator": "Shareholder Capital; table at 31 December 2024; footnotes 1 and 2",
-      "status": "source_reported"
+      "status": "source_reported",
+      "date_basis": "explicit_snapshot"
     },
     {
       "id": "M11",
@@ -241,7 +251,8 @@
       "known_on": "2026-10-30",
       "source_id": "MTS_NEWS",
       "locator": "20 December 2024; paragraphs on appointments and Ecosystem MTS",
-      "status": "source_reported"
+      "status": "source_reported",
+      "date_basis": "announcement_observation"
     },
     {
       "id": "M12",
@@ -255,7 +266,8 @@
       "known_on": "2026-10-30",
       "source_id": "MTS_NEWS",
       "locator": "20 December 2024; paragraphs on appointments and Ecosystem MTS",
-      "status": "source_reported"
+      "status": "source_reported",
+      "date_basis": "announcement_observation"
     },
     {
       "id": "H01",
@@ -271,7 +283,8 @@
       "known_on": "2026-10-30",
       "source_id": "HSBC_SUB",
       "locator": "Main subsidiaries; footnotes 1–3",
-      "status": "source_reported"
+      "status": "source_reported",
+      "date_basis": "explicit_snapshot"
     },
     {
       "id": "H02",
@@ -287,7 +300,8 @@
       "known_on": "2026-10-30",
       "source_id": "HSBC_SUB",
       "locator": "Main subsidiaries; footnotes 1–3",
-      "status": "source_reported"
+      "status": "source_reported",
+      "date_basis": "explicit_snapshot"
     },
     {
       "id": "H03",
@@ -303,7 +317,8 @@
       "known_on": "2026-10-30",
       "source_id": "HSBC_SUB",
       "locator": "Main subsidiaries; footnotes 1–3",
-      "status": "source_reported"
+      "status": "source_reported",
+      "date_basis": "explicit_snapshot"
     },
     {
       "id": "H04",
@@ -320,7 +335,8 @@
       "known_on": "2026-10-30",
       "source_id": "HSBC_AR",
       "locator": "printed p. 320; notice on 24 December 2024",
-      "status": "source_reported"
+      "status": "source_reported",
+      "date_basis": "explicit_snapshot"
     },
     {
       "id": "H05",
@@ -337,7 +353,8 @@
       "known_on": "2026-10-30",
       "source_id": "HSBC_AR",
       "locator": "printed p. 320; notice on 10 May 2024",
-      "status": "source_reported"
+      "status": "source_reported",
+      "date_basis": "explicit_snapshot"
     },
     {
       "id": "H06",
@@ -351,7 +368,8 @@
       "known_on": "2026-10-30",
       "source_id": "HSBC_AR",
       "locator": "printed p. 305; CEO from 2 September 2024",
-      "status": "source_reported"
+      "status": "source_reported",
+      "date_basis": "explicit_snapshot"
     },
     {
       "id": "H07",
@@ -365,7 +383,8 @@
       "known_on": "2026-10-30",
       "source_id": "HSBC_AR",
       "locator": "printed p. 237",
-      "status": "source_reported"
+      "status": "source_reported",
+      "date_basis": "explicit_snapshot"
     },
     {
       "id": "B01",
@@ -383,8 +402,9 @@
       "valid_on": "2025-03-05",
       "known_on": "2026-10-30",
       "source_id": "BRK_PROXY",
-      "locator": "printed pp. 1 and 11; share counts and beneficial ownership at 5 March 2025",
-      "status": "source_reported"
+      "locator": "printed pp. 1 and 11 (PDF pp. 3 and 13); share counts and beneficial ownership at 5 March 2025",
+      "status": "source_reported",
+      "date_basis": "explicit_snapshot"
     },
     {
       "id": "B02",
@@ -400,7 +420,8 @@
       "known_on": "2026-10-30",
       "source_id": "BRK_AR",
       "locator": "K-19 (Pilot), K-80 (BHE), inside back cover (officers)",
-      "status": "source_reported"
+      "status": "source_reported",
+      "date_basis": "explicit_snapshot"
     },
     {
       "id": "B03",
@@ -416,7 +437,8 @@
       "known_on": "2026-10-30",
       "source_id": "BRK_AR",
       "locator": "K-19 (Pilot), K-80 (BHE), inside back cover (officers)",
-      "status": "source_reported"
+      "status": "source_reported",
+      "date_basis": "explicit_snapshot"
     },
     {
       "id": "B04",
@@ -430,7 +452,8 @@
       "known_on": "2026-10-30",
       "source_id": "BRK_AR",
       "locator": "K-19 (Pilot), K-80 (BHE), inside back cover (officers)",
-      "status": "source_reported"
+      "status": "source_reported",
+      "date_basis": "report_observation"
     },
     {
       "id": "B05",
@@ -444,7 +467,8 @@
       "known_on": "2026-10-30",
       "source_id": "BRK_AR",
       "locator": "K-19 (Pilot), K-80 (BHE), inside back cover (officers)",
-      "status": "source_reported"
+      "status": "source_reported",
+      "date_basis": "report_observation"
     },
     {
       "id": "T01",
@@ -461,7 +485,8 @@
       "known_on": "2026-10-30",
       "source_id": "TENCENT_AR",
       "locator": "printed pp. 67–68",
-      "status": "source_reported"
+      "status": "source_reported",
+      "date_basis": "explicit_snapshot"
     },
     {
       "id": "T02",
@@ -477,7 +502,8 @@
       "known_on": "2026-10-30",
       "source_id": "TENCENT_AR",
       "locator": "printed p. 68 note 1",
-      "status": "source_reported"
+      "status": "source_reported",
+      "date_basis": "explicit_snapshot"
     },
     {
       "id": "T03",
@@ -493,7 +519,8 @@
       "known_on": "2026-10-30",
       "source_id": "TENCENT_AR",
       "locator": "printed p. 68 note 1",
-      "status": "source_reported"
+      "status": "source_reported",
+      "date_basis": "explicit_snapshot"
     },
     {
       "id": "T04",
@@ -504,12 +531,13 @@
       "value": {
         "reported_pct": "100"
       },
-      "basis": "direct_equity",
+      "basis": "wholly_owned_directness_unspecified",
       "valid_on": "2024-12-31",
       "known_on": "2026-10-30",
       "source_id": "TENCENT_AR",
       "locator": "printed p. 68 note 1",
-      "status": "source_reported"
+      "status": "source_reported",
+      "date_basis": "explicit_snapshot"
     },
     {
       "id": "T05",
@@ -520,12 +548,13 @@
       "value": {
         "reported_pct": "100"
       },
-      "basis": "direct_equity",
+      "basis": "wholly_owned_directness_unspecified",
       "valid_on": "2024-12-31",
       "known_on": "2026-10-30",
       "source_id": "TENCENT_AR",
       "locator": "printed p. 68 note 1",
-      "status": "source_reported"
+      "status": "source_reported",
+      "date_basis": "explicit_snapshot"
     },
     {
       "id": "T06",
@@ -542,7 +571,8 @@
       "known_on": "2026-10-30",
       "source_id": "TENCENT_AR",
       "locator": "printed p. 76; same block attributed to Prosus and Naspers",
-      "status": "source_reported"
+      "status": "source_reported",
+      "date_basis": "explicit_snapshot"
     },
     {
       "id": "T07",
@@ -558,7 +588,8 @@
       "known_on": "2026-10-30",
       "source_id": "TENCENT_AR",
       "locator": "printed pp. 69 and 71; Tencent Computer",
-      "status": "source_reported"
+      "status": "source_reported",
+      "date_basis": "explicit_snapshot"
     },
     {
       "id": "T08",
@@ -572,7 +603,8 @@
       "known_on": "2026-10-30",
       "source_id": "TENCENT_AR",
       "locator": "printed pp. 69–72; no inferred equity percentage",
-      "status": "source_reported"
+      "status": "source_reported",
+      "date_basis": "explicit_snapshot"
     },
     {
       "id": "T09",
@@ -586,7 +618,8 @@
       "known_on": "2026-10-30",
       "source_id": "TENCENT_AR",
       "locator": "printed p. 60",
-      "status": "source_reported"
+      "status": "source_reported",
+      "date_basis": "report_observation"
     },
     {
       "id": "T10",
@@ -600,7 +633,8 @@
       "known_on": "2026-10-30",
       "source_id": "TENCENT_AR",
       "locator": "printed p. 63",
-      "status": "source_reported"
+      "status": "source_reported",
+      "date_basis": "report_observation"
     },
     {
       "id": "S01",
@@ -617,7 +651,8 @@
       "known_on": "2026-10-30",
       "source_id": "SINGTEL_AR",
       "locator": "printed p. 270",
-      "status": "source_reported"
+      "status": "source_reported",
+      "date_basis": "explicit_snapshot"
     },
     {
       "id": "S02",
@@ -633,7 +668,8 @@
       "known_on": "2026-10-30",
       "source_id": "SINGTEL_AR",
       "locator": "printed p. 270; deemed through subsidiaries and associates",
-      "status": "source_reported"
+      "status": "source_reported",
+      "date_basis": "explicit_snapshot"
     },
     {
       "id": "S03",
@@ -649,7 +685,8 @@
       "known_on": "2026-10-30",
       "source_id": "SINGTEL_AR",
       "locator": "printed p. 227 note 46.1",
-      "status": "source_reported"
+      "status": "source_reported",
+      "date_basis": "explicit_snapshot"
     },
     {
       "id": "S04",
@@ -665,7 +702,8 @@
       "known_on": "2026-10-30",
       "source_id": "SINGTEL_AR",
       "locator": "printed p. 230 note 46.2",
-      "status": "source_reported"
+      "status": "source_reported",
+      "date_basis": "explicit_snapshot"
     },
     {
       "id": "S05",
@@ -679,7 +717,8 @@
       "known_on": "2026-10-30",
       "source_id": "SINGTEL_AR",
       "locator": "printed p. 272; section dated 8 June 2025",
-      "status": "source_reported"
+      "status": "source_reported",
+      "date_basis": "explicit_snapshot"
     },
     {
       "id": "S06",
@@ -693,7 +732,8 @@
       "known_on": "2026-10-30",
       "source_id": "SINGTEL_AR",
       "locator": "printed p. 272; section dated 8 June 2025",
-      "status": "source_reported"
+      "status": "source_reported",
+      "date_basis": "explicit_snapshot"
     }
   ],
   "constants": {

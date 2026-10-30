@@ -1,0 +1,163 @@
+{
+  "version": "1.1",
+  "release_date": "2026-10-30",
+  "hash_algorithm": "SHA-256",
+  "scope": "Distributed research files; excludes this manifest and generated local working directories",
+  "files": [
+    {
+      "path": ".gitignore",
+      "size_bytes": 49,
+      "sha256": "35e9d73f89f457264ac4e2e40fd88975bf390b85548a0be7bea708714eaf5ee5"
+    },
+    {
+      "path": "AUDIT.md",
+      "size_bytes": 5895,
+      "sha256": "e7be363d04a2dc59ac38eb6cc0813a38ccd7c409148700679858ffdc1a3fcbfb"
+    },
+    {
+      "path": "CITATION.cff",
+      "size_bytes": 590,
+      "sha256": "5a4b0e2362d9df11639f4a9eed69f967d1f2294bb76cffe7ac51c1dd270ddf8e"
+    },
+    {
+      "path": "README.md",
+      "size_bytes": 5646,
+      "sha256": "93fe89298441557f9a05c697d3f85a8fe116ca1b2f0f713d25a8c2f8e80b1d31"
+    },
+    {
+      "path": "SSRN_SUBMISSION.md",
+      "size_bytes": 3355,
+      "sha256": "889542b0ad9c4cbdd25b34cfb5b7dc2b26184f328abc3c6caa54943b2e7e18c1"
+    },
+    {
+      "path": "artifacts/Corporate_Groups_SSRN_EN.docx",
+      "size_bytes": 234219,
+      "sha256": "9017d884c6c469dd8c7880835ba199c9c2bd2d34c2df153bec34fac72711376c"
+    },
+    {
+      "path": "artifacts/Corporate_Groups_SSRN_EN.pdf",
+      "size_bytes": 392650,
+      "sha256": "ff976caa0578a5255518c184385d63cea4486b129db9647b7334c2d9602a401c"
+    },
+    {
+      "path": "artifacts/MCP_Harness_Corporate_Groups.docx",
+      "size_bytes": 237830,
+      "sha256": "5ce9b9f5c9dbae41fb001bcf6502175c023a584ebcd90b81a98276bd1e0c37b5"
+    },
+    {
+      "path": "artifacts/MCP_Harness_Corporate_Groups_RU.pdf",
+      "size_bytes": 407455,
+      "sha256": "3c329c2c80f8d790852af71bac9dce44fc6bb13c8de3a90b27f4f579314d12bc"
+    },
+    {
+      "path": "build_dataset.py",
+      "size_bytes": 10818,
+      "sha256": "5c9774b31dc56c0e34d5575d8e19576ac5ccfa4bc5207595761de669ffb4ddf5"
+    },
+    {
+      "path": "build_documents.py",
+      "size_bytes": 7042,
+      "sha256": "6e066222abac3e7768282bb69efb3a4227f500690b59a4bd96b3a5f5dde158f1"
+    },
+    {
+      "path": "data/cases.json",
+      "size_bytes": 24492,
+      "sha256": "9395fb579fcbd9fb9e4bc588bdd280a11b659fb5f60c20c6953e1e3218154a3f"
+    },
+    {
+      "path": "data/cases.sha256",
+      "size_bytes": 77,
+      "sha256": "b0b7b3740ca990bb84b859fe3644b38acd05802bbbacab2bfd1535e956f34438"
+    },
+    {
+      "path": "data/source_downloads.json",
+      "size_bytes": 1565,
+      "sha256": "e7329a575a7f7f3274afff7745e4472b58e5b48a9a9873b90ff5f1e3b4e5103b"
+    },
+    {
+      "path": "data/source_recheck.json",
+      "size_bytes": 2126,
+      "sha256": "00c8e21a34d0121132bf8888508b8370c04bbe8b285cd7022e6346f4737ac0e5"
+    },
+    {
+      "path": "engine.py",
+      "size_bytes": 7653,
+      "sha256": "f3c7ae754c0befb249705b94bfc951818294cb5fc7099e20dc718ae4b7f21a5e"
+    },
+    {
+      "path": "evaluate.py",
+      "size_bytes": 2240,
+      "sha256": "478b96d8c2019d723c71f387890d343fcb61d88aa42db39d58800d314ef2b34e"
+    },
+    {
+      "path": "harness.py",
+      "size_bytes": 7967,
+      "sha256": "9cfb3edcc6428584e0912f9983e9bda096460f8d45ab31f5d41afa6472126214"
+    },
+    {
+      "path": "paper_en.md",
+      "size_bytes": 35581,
+      "sha256": "686cf06406faaca57b137ef07e224e67ba60695deea9c9b901a13c5824f9eb9c"
+    },
+    {
+      "path": "paper_ru.md",
+      "size_bytes": 55692,
+      "sha256": "ae5ad649cb4c6c1754c8b0147dca2cb05dc56d291a4a4db7122cbbf0daa623fe"
+    },
+    {
+      "path": "requirements-documents.txt",
+      "size_bytes": 53,
+      "sha256": "6a06af8e7481a2b0cb28164baf667a312d1d7ba9d6cc9173f5823abb1de8adc4"
+    },
+    {
+      "path": "results/application_test_report.json",
+      "size_bytes": 202,
+      "sha256": "51263b7912382af05705cbddaa8876b02b7ba7722f5cfaa513b0fa149e59f16f"
+    },
+    {
+      "path": "results/checkpoint.json",
+      "size_bytes": 2396,
+      "sha256": "76d06903b71056ac0c5214d1e6f24a0f66a39dde2ebda9d3eb5f31860e31f672"
+    },
+    {
+      "path": "results/mcp_transcript_summary.json",
+      "size_bytes": 1990,
+      "sha256": "4c12ac38217376251a3c6eac164044a1929fed5b842915a58933138b769a4b25"
+    },
+    {
+      "path": "results/mutation_results.json",
+      "size_bytes": 2265,
+      "sha256": "4b002a5498553ff22000eb1b5670e81fc6b67676230044cb55fd5ebcf8fdcd57"
+    },
+    {
+      "path": "results/results.json",
+      "size_bytes": 1413,
+      "sha256": "d24dd9eb2086e599074cc389021c84d838c0e2a5aec700e84509bef278c4ea19"
+    },
+    {
+      "path": "results/test_output.txt",
+      "size_bytes": 5357,
+      "sha256": "31c49f60e5db39129eaed6518e2072ecbf21adecd62b57479ab798035caacee9"
+    },
+    {
+      "path": "results/test_report.json",
+      "size_bytes": 209,
+      "sha256": "1eff03de7d365afedf75f5c696b8b45124529bfc19bde7128fc54d2cd4715567"
+    },
+    {
+      "path": "server.py",
+      "size_bytes": 4601,
+      "sha256": "a30d1dd1913ee238d9dda63a1bf476adb9ed382ba858d1f5f8fa84df1ed05c7f"
+    },
+    {
+      "path": "test_research.py",
+      "size_bytes": 11079,
+      "sha256": "98716a4b2c34983182b771ca67ee7bc60dc61c8c2128a2f26aa8671a40509030"
+    },
+    {
+      "path": "verify_release.py",
+      "size_bytes": 3410,
+      "sha256": "ae7eacb2d95eb56c2322e9775f28318c9fa2c8a00a22c62dc70864a633613e99"
+    }
+  ]
+}

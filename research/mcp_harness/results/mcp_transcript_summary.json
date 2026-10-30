@@ -1,34 +1,60 @@
-[
-  {
-    "method": "initialize",
-    "response_sha256": "12d12de388e6c22a3e5d26dcb7a2f29d14cca80fb3d0bb655cf4f56b1bf4bb14"
-  },
-  {
-    "method": "tools/list",
-    "response_sha256": "145ba9951798e636c19ec90e21d15bc584c11f42b6aedfd814d38476937b871c"
-  },
-  {
-    "method": "tools/call",
-    "response_sha256": "5fc66e1067d1e3590c964c4f55e5a32997ae5d24926468ec19c93dcaf7c0ecb6"
-  },
-  {
-    "method": "tools/call",
-    "response_sha256": "85b9a1f35b5402cdfee5e9fba64d4c1da9b0300a7808fb291199524f9d0d60dd"
-  },
-  {
-    "method": "tools/call",
-    "response_sha256": "8cc8abede796e6bc3ca196e9296a646c0f913fcc7063c3a081fcd06d75d75947"
-  },
-  {
-    "method": "tools/call",
-    "response_sha256": "407f69cf942b43e08268073de4d65191c101c7ab39d14124bf6a75f1d62f98fb"
-  },
-  {
-    "method": "tools/call",
-    "response_sha256": "5d68898f6fdb4fafc00df4b7a8e14761318f3770eb7d957fc7302d789e895b1a"
-  },
-  {
-    "method": "tools/call",
-    "response_sha256": "42cad2f6b64bad691ea15ee68200b7849ef10f7e573026c4cf7b8db2c27d2db6"
-  }
-]
+{
+  "runs": [
+    {
+      "mode": "full",
+      "corpus_sha256": "57ca15f004325fc3db00cfb69557294dd07208bbbb27964df41b371c69ba3cfc",
+      "responses": [
+        {
+          "method": "initialize",
+          "response_sha256": "c0a3c76b978c8347682cd1fe324102fb5af0c7d3babfe68c838b3e06be6a961c"
+        },
+        {
+          "method": "tools/list",
+          "response_sha256": "145ba9951798e636c19ec90e21d15bc584c11f42b6aedfd814d38476937b871c"
+        },
+        {
+          "method": "tools/call",
+          "response_sha256": "5fc66e1067d1e3590c964c4f55e5a32997ae5d24926468ec19c93dcaf7c0ecb6"
+        },
+        {
+          "method": "tools/call",
+          "response_sha256": "7627308c1477d7951c8cce95dcecead105ad24ca37bd580b374a7a6c5eaebe7a"
+        },
+        {
+          "method": "tools/call",
+          "response_sha256": "36375ebd65524b398d7c06d340cc2a82f95e4ff5db45ed3ba0ca5e4aac7e7b3b"
+        },
+        {
+          "method": "tools/call",
+          "response_sha256": "ea1727be7eb99aed804b1f48e91aafeae095b51a97f0f55ebebe1677f7a40fbf"
+        },
+        {
+          "method": "tools/call",
+          "response_sha256": "2577be773fb736ddb6ea3410234a7110a5efed7272fd7e973870456fa59d06b6"
+        },
+        {
+          "method": "tools/call",
+          "response_sha256": "0591eccfeea3ba7b8bb74549d08aaeb2ad0d624f7337f3ac0d408cf179c7828a"
+        }
+      ]
+    },
+    {
+      "mode": "resume",
+      "corpus_sha256": "57ca15f004325fc3db00cfb69557294dd07208bbbb27964df41b371c69ba3cfc",
+      "responses": [
+        {
+          "method": "initialize",
+          "response_sha256": "c0a3c76b978c8347682cd1fe324102fb5af0c7d3babfe68c838b3e06be6a961c"
+        },
+        {
+          "method": "tools/list",
+          "response_sha256": "145ba9951798e636c19ec90e21d15bc584c11f42b6aedfd814d38476937b871c"
+        },
+        {
+          "method": "tools/call",
+          "response_sha256": "5fc66e1067d1e3590c964c4f55e5a32997ae5d24926468ec19c93dcaf7c0ecb6"
+        }
+      ]
+    }
+  ]
+}

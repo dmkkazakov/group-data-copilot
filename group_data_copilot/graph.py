@@ -15,7 +15,7 @@ def build_ownership_graph(entities: list[Entity], ownership: list[OwnershipEdge]
 
 
 def graph_edges_dataframe(ownership: list[OwnershipEdge]) -> pd.DataFrame:
-    return pd.DataFrame([e.model_dump() for e in ownership])
+    return pd.DataFrame([e.model_dump() for e in ownership], columns=["parent_id", "child_id", "share"])
 
 
 def graph_metrics(g: nx.DiGraph) -> dict:
@@ -25,3 +25,4 @@ def graph_metrics(g: nx.DiGraph) -> dict:
         "weak_components": nx.number_weakly_connected_components(g) if g.number_of_nodes() else 0,
         "is_dag": nx.is_directed_acyclic_graph(g) if g.number_of_nodes() else True,
     }
+

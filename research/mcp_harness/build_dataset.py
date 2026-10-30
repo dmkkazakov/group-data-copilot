@@ -9,7 +9,7 @@ SOURCES = {
     "MTS_NEWS": {"title": "MTS corporate restructuring announcement", "url": "https://nao.mts.ru/about/media-centr/soobshheniya-kompanii/novosti-mts-v-rossii-i-mire/2024-12-20/mts-prodolzhaet-transformaciyu-korporativnoj-struktury", "locator": "20 December 2024; paragraphs on appointments and Ecosystem MTS", "published": "2024-12-20"},
     "HSBC_SUB": {"title": "HSBC 2024 Annual Report — Note 19", "url": "https://www.sec.gov/Archives/edgar/data/1089113/000108911325000040/R98.htm", "locator": "Main subsidiaries; footnotes 1–3", "published": None},
     "HSBC_AR": {"title": "HSBC Holdings plc Annual Report and Accounts 2024", "url": "https://www.about.hsbc.com.hk/-/media/hong-kong/en/investor-relations/annual-results-2024/250219-annual-report-and-accounts-2024-en.pdf?sc_lang=en-GB", "locator": "printed pp. 237–238, 305, 320; PDF pages are printed pages + 2", "published": "2025-02-19"},
-    "BRK_PROXY": {"title": "Berkshire Hathaway 2025 Proxy Statement", "url": "https://www.berkshirehathaway.com/meet01/2025proxystatement.pdf", "locator": "printed pp. 1 and 11; share counts and beneficial ownership at 5 March 2025", "published": "2025-03-14"},
+    "BRK_PROXY": {"title": "Berkshire Hathaway 2025 Proxy Statement", "url": "https://www.berkshirehathaway.com/meet01/2025proxystatement.pdf", "locator": "printed pp. 1 and 11 (PDF pp. 3 and 13); share counts and beneficial ownership at 5 March 2025", "published": "2025-03-14"},
     "BRK_AR": {"title": "Berkshire Hathaway 2024 Annual Report", "url": "https://www.berkshirehathaway.com/2024ar/2024ar.pdf", "locator": "K-19 (Pilot), K-80 (BHE), inside back cover (officers)", "published": "2025-02-22"},
     "TENCENT_AR": {"title": "Tencent Holdings Limited Annual Report 2024", "url": "https://static.www.tencent.com/uploads/2025/04/08/1132b72b565389d1b913aea60a648d73.pdf", "locator": "printed pp. 2, 60, 63, 67–69, 71, 76, 114; PDF pages = printed + 1", "published": "2025-04-08"},
     "SINGTEL_AR": {"title": "Singapore Telecommunications Limited Annual Report 2025", "url": "https://links.sgx.com/1.0.0/corporate-announcements/45HXB745U21ORPFV/850270_Singtel%20Annual%20Report%202025.pdf", "locator": "printed pp. 227, 230, 270–272; PDF pages = printed + 2", "published": "2025-06-30"}
@@ -56,8 +56,8 @@ claim("B05","US","Gregory Abel","management_role","Berkshire Hathaway Inc.","Vic
 claim("T01","CN","Ma Huateng","interest_in","Tencent Holdings Limited",{"shares":804859700,"reported_pct":"8.72"},"corporate_attributed_interest","2024-12-31","TENCENT_AR","printed pp. 67–68")
 claim("T02","CN","Advance Data Services Limited","interest_in","Tencent Holdings Limited",{"shares":709859700},"direct_shares","2024-12-31","TENCENT_AR","printed p. 68 note 1")
 claim("T03","CN","Ma Huateng Global Foundation","interest_in","Tencent Holdings Limited",{"shares":95000000},"direct_shares","2024-12-31","TENCENT_AR","printed p. 68 note 1")
-claim("T04","CN","Ma Huateng","interest_in","Advance Data Services Limited",{"reported_pct":"100"},"direct_equity","2024-12-31","TENCENT_AR","printed p. 68 note 1")
-claim("T05","CN","Advance Data Services Limited","interest_in","Ma Huateng Global Foundation",{"reported_pct":"100"},"direct_equity","2024-12-31","TENCENT_AR","printed p. 68 note 1")
+claim("T04","CN","Ma Huateng","interest_in","Advance Data Services Limited",{"reported_pct":"100"},"wholly_owned_directness_unspecified","2024-12-31","TENCENT_AR","printed p. 68 note 1")
+claim("T05","CN","Advance Data Services Limited","interest_in","Ma Huateng Global Foundation",{"reported_pct":"100"},"wholly_owned_directness_unspecified","2024-12-31","TENCENT_AR","printed p. 68 note 1")
 claim("T06","CN","MIH Internet Holdings B.V.","interest_in","Tencent Holdings Limited",{"shares":2214863800,"reported_pct":"24.01"},"corporate_long_position","2024-12-31","TENCENT_AR","printed p. 76; same block attributed to Prosus and Naspers")
 claim("T07","CN","Ma Huateng","interest_in","Shenzhen Tencent Computer Systems Company Limited",{"reported_pct":"54.29"},"registered_equity","2024-12-31","TENCENT_AR","printed pp. 69 and 71; Tencent Computer")
 claim("T08","CN","Tencent group","contractual_control","Shenzhen Tencent Computer Systems Company Limited",None,"structure_contracts","2024-12-31","TENCENT_AR","printed pp. 69–72; no inferred equity percentage")
@@ -71,7 +71,12 @@ for cid, sub, loc in [("S03","NCS Pte. Ltd.","printed p. 227 note 46.1"),("S04",
 claim("S05","SG","Lee Theng Kiat","management_role","Singapore Telecommunications Limited","Chairman","corporate_information_snapshot","2025-06-08","SINGTEL_AR","printed p. 272; section dated 8 June 2025")
 claim("S06","SG","Yuen Kuan Moon","management_role","Singapore Telecommunications Limited","Group CEO","corporate_information_snapshot","2025-06-08","SINGTEL_AR","printed p. 272; section dated 8 June 2025")
 
-corpus = {"schema_version":"1.0.0","curation":"AI-assisted manual transcription from public primary sources; not an automated extraction benchmark", "sources":SOURCES,"claims":claims,
+for c in claims:
+    c["date_basis"] = ("report_observation" if c["id"] in {"B04", "B05", "T09", "T10"}
+                       else "announcement_observation" if c["id"] in {"M11", "M12"}
+                       else "explicit_snapshot")
+
+corpus = {"schema_version":"1.1.0","curation":"AI-assisted manual transcription from public primary sources; not an automated extraction benchmark", "sources":SOURCES,"claims":claims,
  "constants": {"MTS_total_shares":1998381575,"Berkshire_A_outstanding":544953,"Berkshire_B_outstanding":1339905639,"Berkshire_A_economic_weight":1500,"Berkshire_A_vote_weight":10000,"Tencent_total_shares":9224914953,"Singtel_total_issued_shares":16514634755,"Singtel_treasury_shares":2059079},
  "constant_evidence": {"MTS_total_shares":"MTS_CAP","Berkshire_A_outstanding":"BRK_PROXY p. 1","Berkshire_B_outstanding":"BRK_PROXY p. 1","Berkshire_A_economic_weight":"BRK_PROXY p. 11; class conversion basis","Berkshire_A_vote_weight":"BRK_PROXY p. 1","Tencent_total_shares":"TENCENT_AR p. 68 note 7","Singtel_total_issued_shares":"SINGTEL_AR p. 271; denominator excludes treasury under p. 270 note 1","Singtel_treasury_shares":"SINGTEL_AR pp. 270–271"}}
 

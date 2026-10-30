@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.venv/
+build/
+dist/
+research/mcp_harness/figures/
+research/mcp_harness/results_local/
+*.tmp

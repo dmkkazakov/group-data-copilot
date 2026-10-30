@@ -8,19 +8,35 @@ test_closed_cycle_rejected (test_research.ResearchTests.test_closed_cycle_reject
 test_cross_holding_solution_and_conservation (test_research.ResearchTests.test_cross_holding_solution_and_conservation) ... ok
 test_direct_path (test_research.ResearchTests.test_direct_path) ... ok
 test_disconnected_path_rejected (test_research.ResearchTests.test_disconnected_path_rejected) ... ok
+test_distinct_paths_can_share_a_prefix (test_research.ResearchTests.test_distinct_paths_can_share_a_prefix) ... ok
+test_duplicate_corpus_identifier_rejected (test_research.ResearchTests.test_duplicate_corpus_identifier_rejected) ... ok
 test_empty_class_denominator_rejected (test_research.ResearchTests.test_empty_class_denominator_rejected) ... ok
 test_end_to_end_mcp_and_resume (test_research.ResearchTests.test_end_to_end_mcp_and_resume) ... ok
+test_every_field_corruption_rejected (test_research.ResearchTests.test_every_field_corruption_rejected) ... ok
+test_extra_and_missing_fields_rejected (test_research.ResearchTests.test_extra_and_missing_fields_rejected) ... ok
+test_fractional_or_boolean_share_count_rejected (test_research.ResearchTests.test_fractional_or_boolean_share_count_rejected) ... ok
 test_hsbc_group_interest_not_direct (test_research.ResearchTests.test_hsbc_group_interest_not_direct) ... ok
 test_hsbc_notice_not_period_end_snapshot (test_research.ResearchTests.test_hsbc_notice_not_period_end_snapshot) ... ok
+test_hung_server_times_out (test_research.ResearchTests.test_hung_server_times_out) ... ok
 test_impossible_class_count_rejected (test_research.ResearchTests.test_impossible_class_count_rejected) ... ok
+test_initialization_requires_protocol_and_client_fields (test_research.ResearchTests.test_initialization_requires_protocol_and_client_fields) ... ok
+test_integer_and_float_values_not_identical (test_research.ResearchTests.test_integer_and_float_values_not_identical) ... ok
+test_invalid_calendar_date_rejected (test_research.ResearchTests.test_invalid_calendar_date_rejected) ... ok
 test_missing_evidence_rejected (test_research.ResearchTests.test_missing_evidence_rejected) ... ok
+test_missing_or_duplicate_inventory_rejected (test_research.ResearchTests.test_missing_or_duplicate_inventory_rejected) ... ok
 test_missing_percentage_stays_missing (test_research.ResearchTests.test_missing_percentage_stays_missing) ... ok
 test_mts_aggregate_not_direct (test_research.ResearchTests.test_mts_aggregate_not_direct) ... ok
 test_mts_double_count_exceeds_partition (test_research.ResearchTests.test_mts_double_count_exceeds_partition) ... ok
 test_mts_exact_partition (test_research.ResearchTests.test_mts_exact_partition) ... ok
+test_mutation_controls_are_complete (test_research.ResearchTests.test_mutation_controls_are_complete) ... ok
 test_no_upgrade_to_confirmed_ubo (test_research.ResearchTests.test_no_upgrade_to_confirmed_ubo) ... ok
 test_not_known_before_ingestion (test_research.ResearchTests.test_not_known_before_ingestion) ... ok
+test_partial_checkpoint_resume (test_research.ResearchTests.test_partial_checkpoint_resume) ... ok
+test_rehashed_checkpoint_must_match_state (test_research.ResearchTests.test_rehashed_checkpoint_must_match_state) ... ok
+test_resume_keeps_original_transcript (test_research.ResearchTests.test_resume_keeps_original_transcript) ... ok
 test_server_initialization_required (test_research.ResearchTests.test_server_initialization_required) ... ok
+test_server_invalid_types_do_not_crash (test_research.ResearchTests.test_server_invalid_types_do_not_crash) ... ok
+test_server_rejects_missing_method_and_bad_id (test_research.ResearchTests.test_server_rejects_missing_method_and_bad_id) ... ok
 test_server_schema_rejects_arbitrary_url (test_research.ResearchTests.test_server_schema_rejects_arbitrary_url) ... ok
 test_singtel_deemed_not_direct (test_research.ResearchTests.test_singtel_deemed_not_direct) ... ok
 test_singtel_direct_percentage (test_research.ResearchTests.test_singtel_direct_percentage) ... ok
@@ -28,8 +44,10 @@ test_singtel_june_cannot_backfill_march (test_research.ResearchTests.test_singte
 test_tencent_published_rounding (test_research.ResearchTests.test_tencent_published_rounding) ... ok
 test_tencent_share_reconciliation (test_research.ResearchTests.test_tencent_share_reconciliation) ... ok
 test_tencent_vie_not_equity (test_research.ResearchTests.test_tencent_vie_not_equity) ... ok
+test_unknown_completed_case_rejected (test_research.ResearchTests.test_unknown_completed_case_rejected) ... ok
+test_wholly_owned_is_not_a_direct_path (test_research.ResearchTests.test_wholly_owned_is_not_a_direct_path) ... ok
 
 ----------------------------------------------------------------------
-Ran 30 tests in 0.178s
+Ran 48 tests in 0.694s
 
 OK

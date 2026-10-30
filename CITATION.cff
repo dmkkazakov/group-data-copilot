@@ -1,8 +1,10 @@
 cff-version: 1.2.0
+type: software
 title: Group Data Copilot
 authors:
   - family-names: Kazakov
     given-names: Dmitry
-version: 0.1.0
-date-released: 2026-05-29
-message: If you use this project, please cite it as an independent research software prototype.
+version: 0.1.1
+date-released: 2026-10-30
+repository-code: https://github.com/dmkkazakov/group-data-copilot
+message: "For the corporate-group research paper, use research/mcp_harness/CITATION.cff and specify the commit."

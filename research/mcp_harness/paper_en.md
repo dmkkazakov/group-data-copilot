@@ -4,11 +4,11 @@ Dmitry Kazakov
 
 Independent research · dmkkazakov@gmail.com
 
-Working paper · 30 October 2026 · Version 1.0
+Working paper · 30 October 2026 · Version 1.1
 
 ## Abstract
 
-Public corporate disclosures contain enough information to reconstruct useful parts of a business group, but they rarely describe ownership, voting power, management and consolidation in one consistent language. This paper develops a typed, dated evidence model and a bounded execution harness connected through the Model Context Protocol (MCP). A purposive study of MTS, HSBC, Berkshire Hathaway, Tencent and Singtel contributes a reproducible corpus of 40 assertions, five case reconstructions and executable arithmetic checks. The cases expose aggregate interests mistaken for direct holdings, different observation dates within one report, unequal share classes and contractual control without equivalent registered equity. Recalculation also leaves one numerical discrepancy open: Berkshire's disclosed share counts imply 14.348232% economic participation for Warren Buffett, while its table reports 14.4%. The released implementation preserves both values instead of silently reconciling them. Thirty software tests pass, including a real MCP subprocess exchange and checkpoint replay. These results establish reproducibility for a small curated corpus; they do not estimate the accuracy of autonomous extraction. Generative AI assisted source discovery, drafting, translation and code development. Numerical checks are reproducible in the accompanying repository.
+Public corporate disclosures contain enough information to reconstruct useful parts of a business group, but they rarely describe ownership, voting power, management and consolidation in one consistent language. This paper develops a typed, dated evidence model and a bounded execution harness connected through the Model Context Protocol (MCP). A purposive study of MTS, HSBC, Berkshire Hathaway, Tencent and Singtel contributes a reproducible corpus of 40 assertions, five case reconstructions and executable arithmetic checks. The cases expose aggregate interests mistaken for direct holdings, different observation dates within one report, unequal share classes and contractual control without equivalent registered equity. Recalculation also leaves one numerical discrepancy open: Berkshire's disclosed share counts imply 14.348232% economic participation for Warren Buffett, while its table reports 14.4%. The released implementation preserves both values instead of silently reconciling them. Forty-eight research tests pass, including a real MCP subprocess exchange and checkpoint replay. A deterministic corruption experiment rejects all 520 single-field alterations and accepts 40 unchanged controls; these controls measure replay integrity against the reference, not the truth of that reference. These results establish reproducibility for a small curated corpus; they do not estimate the accuracy of autonomous extraction. Generative AI assisted source discovery, drafting, translation and code development. Numerical checks are reproducible in the accompanying repository.
 
 Keywords: corporate ownership; public disclosures; evidence provenance; Model Context Protocol; agent harness; corporate governance
 
@@ -36,7 +36,7 @@ The released example pins protocol revision 2025-11-25 for reproducibility. It i
 
 ## 3 Research design and source collection
 
-The sample comprises one group associated with each requested jurisdiction: Russia, the United Kingdom, the United States, China and Singapore. Selection was purposive. Each group publishes accessible reports and illustrates a different failure mode. Tencent is a China-based operating group whose listed parent is incorporated in the Cayman Islands. Operational geography and legal domicile are recorded separately.
+The sample comprises one group associated with each of five jurisdictions: Russia, the United Kingdom, the United States, China and Singapore. Selection was purposive. Each group publishes accessible reports and illustrates a different failure mode. Tencent is a China-based operating group whose listed parent is incorporated in the Cayman Islands. Operational geography and legal domicile are recorded separately.
 
 The study uses financial years ending in 2024, except Singtel's year ending 31 March 2025. Shareholder and officer dates follow the individual disclosure, even when they fall after the financial year end. Retrieval occurred on 30 October 2026. These are retrospective reconstructions, not descriptions of the groups' current ownership or management.
 
@@ -52,7 +52,7 @@ Let a source assertion be
 
 $$c=(s,r,o,b,x,t_v,t_k,e). \tag{1}$$
 
-Here s and o are identified subjects and objects; r is the relation; b is its semantic basis; x is a value or an explicit null; t_v is the date to which the assertion applies; t_k is the date it entered this corpus; and e identifies the source and locator. The released data also retain the claim identifier and its source_reported status. The public filing date is source metadata and must not be confused with t_k.
+Here s and o are identified subjects and objects; r is the relation; b is its semantic basis; x is a value or an explicit null; t_v is the date to which the assertion applies; t_k is the date it entered this corpus; and e identifies the source and locator. The released data also retain the claim identifier, case identifier, date_basis and source_reported status. Date basis distinguishes an explicit snapshot from an observation in an announcement or report. Where a biography supplies no separate effective date, the publication date identifies the observation; it is not inferred to be the appointment date. The public filing date is source metadata and must not be confused with t_k.
 
 The graph has separate layers for registered or direct equity, attributed interests, votes, management, contractual control and accounting consolidation. An edge in one layer cannot silently migrate to another. In particular, an issuer's subsidiary list does not necessarily identify the immediate parent of each subsidiary. A person's registered interest in an operating company does not settle how that company's economic benefits are allocated under contracts.
 
@@ -68,17 +68,17 @@ Entity matching is similarly conservative. Official identifiers should dominate 
 
 ### 5.1 Direct and indirect economic participation
 
-Let W be a non-negative ownership matrix, with W_ij the fraction of company j's compatible equity directly held by entity i. Rows identify owners; columns identify investees. A valid complete partition satisfies
+Let W be a non-negative ownership matrix, with W_ij the fraction of company j's compatible equity directly held by entity i. Rows identify owners; columns identify investees. A possibly incomplete set of non-overlapping direct holdings satisfies
 
 $$0\leq W_{ij}\leq1,\qquad \sum_i W_{ij}\leq1. \tag{3}$$
 
-The column constraint applies to non-overlapping direct holdings on the same date and denominator. Aggregated and deemed interests are excluded. A sum below one can represent an unobserved remainder; it is not evidence that the remainder has no owner. The MTS case demonstrates why an aggregate row and a subsidiary already included in it cannot be added again.
+For a fully observed partition of the relevant rights, the column sum equals one. The constraint applies to non-overlapping direct holdings on the same date and denominator. Aggregated and deemed interests are excluded. A sum below one can represent an unobserved remainder; it is not evidence that the remainder has no owner. The MTS case demonstrates why an aggregate row and a subsidiary already included in it cannot be added again.
 
-For a directed acyclic graph, a path contribution is the product of compatible edge weights. Summing disjoint ownership routes gives
+For a directed acyclic graph, a path contribution is the product of compatible edge weights. Summing over distinct directed paths gives
 
 $$u_{ij}=\sum_{p\in\mathcal{P}_{ij}}\prod_{(a,b)\in p}W_{ab},\qquad M=\sum_{k=1}^{n-1}W^k. \tag{4}$$
 
-The formula assumes proportional economic rights, aligned dates and a correctly specified direct graph. It must not be applied to a mixture of direct and already aggregated holdings. It measures participation transmitted through the specified equity network. It is not a legal control test and does not identify an undisclosed beneficial owner.
+Paths may share a prefix or suffix; they need not be edge-disjoint. For example, A owns all of B, B owns 20% of C and 30% of D, and D owns 10% of C. The two A-to-C paths share A-to-B and contribute 20% + 30% × 10% = 23%. The formula assumes proportional economic rights, aligned dates and a correctly specified direct graph. It must not be applied to a mixture of direct and already aggregated holdings. It measures participation transmitted through the specified equity network. It is not a legal control test and does not identify an undisclosed beneficial owner.
 
 ### 5.2 Cross-holdings
 
@@ -122,7 +122,7 @@ Joint constraints can tighten these bounds. Unknown routes can invalidate an app
 
 ## 6 From source assertions to a released result
 
-The released server exposes only case_list and case_get. The client performs an initialize handshake, declares readiness, discovers the tool schema and requests each case through newline-delimited JSON-RPC over stdio [17]. The harness compares returned assertions with the frozen corpus, checks their dates and semantic fields, then writes a checkpoint after each completed case.
+The released server exposes only case_list and case_get. The client performs an initialize handshake, declares readiness, discovers the tool schema and requests each case through newline-delimited JSON-RPC over stdio [17]. The harness compares returned assertions with the frozen corpus, checks their dates and semantic fields, then writes a checkpoint after each completed case. It checks all 13 claim fields, including the locator and knowledge date, requires the complete ordered case inventory and validates source metadata. A ten-second response deadline bounds each request. Restart validation reconstructs the expected event sequence and ties it to the accepted identifiers. A resumed run appends its transcript without replacing the original run.
 
 This exact comparison is intentionally modest. It detects corrupted replay and prohibited transformations. It does not independently verify whether the initial transcription is true. The five case calculations provide additional arithmetic checks, while a reviewer can inspect the linked primary sources. Neither a schema validator nor a passing unit test can take over the reviewer's job.
 
@@ -134,11 +134,11 @@ Each implemented gate is binary. A failed gate rejects the proposed assertion. S
 
 Checkpoint files contain the corpus digest, completed cases, accepted claim identifiers and a chained event record:
 
-$$h_j=H(h_{j-1}\Vert\operatorname{canonical}(event_j)). \tag{13}$$
+$$h_j=H(\operatorname{canonical}(event_j)),\quad event_j=(h_{j-1},case_j,ids_j). \tag{13}$$
 
-The implementation hashes a canonical JSON payload containing the preceding digest. This detects accidental changes in the tested workflow. It is not an independently signed or tamper-proof audit trail: an attacker who can rewrite the complete file can recompute the chain. The corpus checksum similarly identifies bytes; it does not certify factual accuracy.
+The event is serialized as a JSON object with previous, case and accepted_ids fields. The hash field itself is excluded; keys are sorted, UTF-8 is used and separators contain no whitespace. The implementation hashes that canonical payload containing the preceding digest. This detects accidental changes in the tested workflow. It is not an independently signed or tamper-proof audit trail: an attacker who can rewrite the complete file can recompute the chain. The corpus checksum similarly identifies bytes; it does not certify factual accuracy.
 
-For future autonomous retrieval, the harness would also need request budgets, timeouts, rate limits, source-origin deduplication and controls against instructions embedded in retrieved text [3]. Those features are design requirements, not results demonstrated by this offline corpus server. Public documents remain data; their contents do not authorize shell commands or changes to tool permissions.
+For future autonomous retrieval, the harness would also need retrieval budgets, network rate limits, source-origin deduplication and controls against instructions embedded in retrieved text [3]. Those retrieval features are design requirements, not results demonstrated by this offline corpus server. Its bounded local requests and fixed tool surface do not provide network-crawler security. Public documents remain data; their contents do not authorize shell commands or changes to tool permissions.
 
 ## 7 Results and what the tests establish
 
@@ -152,7 +152,16 @@ Table 1 summarizes the five reconstructions. The appendices provide the numerica
 | Tencent | 804,859,700 shares reconcile to 8.724847% | Turning contractual control into registered equity |
 | Singtel | Treasury-adjusted denominator reproduces 50.29% | Treating June shareholders as a March snapshot |
 
-All 30 test methods pass. They cover the public arithmetic, changed values and entities, date mismatches, incompatible relation types, missing evidence, share-class denominators, a synthetic cross-holding calculation, initialization requirements, rejected tool arguments, subprocess communication and checkpoint replay. Forty unmodified source assertions pass the replay gates. These are acceptance and regression checks over a constructed corpus, not 40 independently adjudicated predictions.
+All 48 research test methods pass. They cover the public arithmetic, changed values and entities, date mismatches, incompatible relation types, missing evidence, share-class denominators, a synthetic cross-holding calculation, initialization requirements, rejected tool arguments, subprocess communication and checkpoint replay. Forty unmodified source assertions pass the replay gates. The wider repository also has 17 tests for its separate CSV application; those are not counted as research tests. These are acceptance and regression checks over a constructed corpus, not independently adjudicated predictions.
+
+A deterministic corruption experiment makes the gate comparison explicit. For each of the 40 assertions, evaluate.py changes exactly one of 13 fields while leaving the reference and query dates fixed. This produces 520 corrupted records plus 40 clean controls. A deliberately weak baseline accepts a record whenever its source_id is populated. The full gate checks typed equality against the reference and temporal eligibility.
+
+| Control group | Records | Presence baseline accepted | Full gate accepted |
+|---|---|---|---|
+| Unchanged assertions | 40 | 40 | 40 |
+| One corrupted field per record | 520 | 520 | 0 |
+
+All 40 mutations of each field are rejected. The result demonstrates coverage of the declared comparison surface, not generalization to unseen extraction errors. The controls are constructed, correlated and derived from the same reference; no confidence interval or field-level accuracy estimate is warranted. If the reference itself is wrong and the candidate repeats it, both checks can accept the error. Source review therefore remains a separate task. The generator and per-field counts are published in evaluate.py and results/mutation_results.json.
 
 There is no model comparison, held-out extraction set or measured retrieval recall. Consequently, this study reports no extraction-accuracy percentage, latency advantage or reduction in analyst hours. A useful next evaluation would separate discovery, extraction, entity resolution and interpretation, with independent annotation and a locked test split.
 
@@ -160,11 +169,13 @@ For such an evaluation, report both precision and the fraction of questions answ
 
 $$P=\frac{TP}{TP+FP},\qquad C=\frac{N_{answered}}{N_{eligible}}. \tag{14}$$
 
-Increasing precision by refusing every difficult case would make C uninformative unless both measures are shown. A practical decision policy should also expose the relative cost of a false ownership assertion and an abstention:
+High precision obtained by refusing difficult cases says little without coverage; both measures must be reported. A practical decision policy should also expose the relative cost of a false ownership assertion and an abstention:
 
 $$L=\lambda_{FP}FP+\lambda_{FN}FN+\lambda_A N_{abstain}. \tag{15}$$
 
-The loss weights depend on the intended use and are not estimated here. Counting citations is not a replacement for this evaluation. Three copies of one announcement are one source with a larger entourage.
+Here FN denotes an eligible positive case incorrectly answered as negative, while abstention is a separate outcome; these counts must not overlap. The loss weights depend on the intended use and are not estimated here. Counting citations is not a replacement for this evaluation. Three copies of one announcement are one source with a larger entourage.
+
+<!-- pagebreak -->
 
 ## 8 Limitations and implications
 
@@ -204,7 +215,7 @@ The calculation reproduces the total exactly. A deliberately wrong procedure tha
 
 The December announcement names Inessa Galaktionova as General Director and Vyacheslav Nikolaev as Chairman. It also discusses the planned structure around Ecosystem MTS [9]. Announced future organizational steps are not coded as completed transactions merely because they appear in the same paragraph as an appointment.
 
-To verify: open [8], read the table headed with 31 December 2024 and both footnotes; add the six integer counts. Then open [9] and inspect the appointment paragraphs. Corpus identifiers are M01–M12. The result is a limited, dated reconstruction of selected capital and management relationships.
+To verify: open [8], read the table headed with 31 December 2024 and both footnotes; add the six integer counts. Then open [9] and inspect the appointment paragraphs. The HTML endpoints were intermittently inaccessible during rechecking; the access log records this limitation. Corpus identifiers are M01–M12. The result is a limited, dated reconstruction of selected capital and management relationships.
 
 <!-- pagebreak -->
 
@@ -247,7 +258,7 @@ This is a useful distinction between two valid statements: the issuer reports on
 
 The annual report states that Berkshire Hathaway Energy became wholly owned during 2024 and that Pilot Travel Centers became an indirect wholly owned subsidiary. It lists Warren Buffett as Chairman and CEO and Gregory Abel as Vice Chairman for Non-Insurance Operations [13]. These are historical report observations, not a claim about the current leadership in October 2026. BHE's directness is not inferred from the phrase wholly owned.
 
-To verify: read printed pages 1 and 11 of [12] and recompute both fractions. In [13], inspect K-19, K-80 and the inside back cover. Corpus identifiers are B01–B05. The open issue is included in results.json as economic_reconciliation.
+To verify: read printed pages 1 and 11 of [12] (PDF pages 3 and 13) and recompute both fractions. In [13], inspect K-19, K-80 and the inside back cover. Corpus identifiers are B01–B05. The open issue is included in results.json as economic_reconciliation.
 
 <!-- pagebreak -->
 
@@ -263,7 +274,7 @@ The ownership snapshot is 31 December 2024. Tencent Holdings Limited is incorpor
 | MIH Internet Holdings disclosed block | 2,214,863,800 shares | Same block attributed up its control chain |
 | Ma's Tencent Computer registered equity | 54.29% | Different legal entity and rights |
 
-The two components of Ma's listed-company interest sum exactly to 804,859,700. Dividing by 9,224,914,953 issued shares gives 8.724847%, consistent with the reported 8.72%. The MIH block similarly gives 24.009585%, consistent with 24.01%. The report attributes that same block to MIH, Prosus and Naspers. Adding those three attributions would count the same shares three times.
+The wholly-owned descriptions of Advance Data Services and its foundation subsidiary are retained as such; they do not by themselves prove a complete immediate-parent chain. The two components of Ma's listed-company interest sum exactly to 804,859,700. Dividing by 9,224,914,953 issued shares gives 8.724847%, consistent with the reported 8.72%. The MIH block similarly gives 24.009585%, consistent with 24.01%. The report attributes that same block to MIH, Prosus and Naspers. Adding those three attributions would count the same shares three times.
 
 The report describes Structure Contracts governing the relevant operating companies. Contractual control is therefore a separate relation from registered equity. Ma's 54.29% in Tencent Computer cannot be substituted for his 8.72% attributed interest in the listed parent, and the contractual relation cannot be assigned a fabricated 100% equity weight.
 
@@ -306,7 +317,7 @@ To verify: inspect Note 46, printed pages 227 and 230, then pages 270–272 of [
 
 [4] Anthropic. Effective harnesses for long-running agents. 26 November 2025. https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents
 
-[5] Open Ownership. Beneficial Ownership Data Standard 0.4. Data model. https://standard.openownership.org/en/latest/primer/datamodel.html
+[5] Open Ownership. Beneficial Ownership Data Standard 0.4. Data model. https://standard.openownership.org/en/0.4.0/primer/
 
 [6] W3C. PROV-O The PROV Ontology. Recommendation, 30 April 2013. https://www.w3.org/TR/prov-o/
 

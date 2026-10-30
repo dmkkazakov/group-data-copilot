@@ -22,7 +22,7 @@ def write_outputs(profile: GroupProfile, output_dir: str | Path) -> None:
     graph_edges_dataframe(profile.ownership).to_csv(out / "ownership_edges.csv", index=False)
     financial_summary(profile.financials).to_csv(out / "financial_summary.csv", index=False)
     revenue_concentration(profile.financials).to_csv(out / "revenue_concentration.csv", index=False)
-    pd.DataFrame([r.model_dump() for r in profile.risk_flags]).to_csv(out / "risk_flags.csv", index=False)
+    pd.DataFrame([r.model_dump() for r in profile.risk_flags], columns=["entity_id", "severity", "flag", "explanation"]).to_csv(out / "risk_flags.csv", index=False)
 
     g = build_ownership_graph(profile.entities, profile.ownership)
     metrics = graph_metrics(g)
@@ -41,7 +41,7 @@ def render_markdown_report(profile: GroupProfile, metrics: dict) -> str:
         "",
         "## Executive summary",
         "",
-        f"The agent identified **{entity_count} legal entities** and **{len(profile.ownership)} ownership links**.",
+        f"The supplied files contain **{entity_count} legal entities** and **{len(profile.ownership)} ownership links**.",
         f"The current risk scan produced **{flags_high} high** and **{flags_medium} medium** flags.",
         "",
         "## Graph metrics",
@@ -68,6 +68,8 @@ def render_markdown_report(profile: GroupProfile, metrics: dict) -> str:
         "",
         "## Analytical interpretation",
         "",
+        "Financial totals are unconsolidated sums of supplied entity records. Currency, units and reporting basis must be aligned before ingestion. Intercompany eliminations are not performed. Missing metrics remain missing, and omitted entities can still make the supplied perimeter incomplete.",
+        "",
         "This dossier is a first-pass analytical layer. It does not replace official due diligence, legal verification, sanction screening, financial statement analysis or credit committee materials.",
         "",
         "Recommended next steps:",
@@ -79,3 +81,4 @@ def render_markdown_report(profile: GroupProfile, metrics: dict) -> str:
         "5. Run credit limit allocation and liquidity stress scenarios."
     ])
     return "\n".join(lines)
+

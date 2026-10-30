@@ -1,0 +1,7 @@
+{
+  "run_date": "2026-10-30",
+  "command": "work/audit_env/bin/python -m pytest -q audit_repo/tests",
+  "tests_passed": 17,
+  "failures": 0,
+  "scope": "Separate CSV application; synthetic test data"
+}

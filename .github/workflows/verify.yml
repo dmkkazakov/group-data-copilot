@@ -1,0 +1,25 @@
+name: Verify research and CSV application
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python -m pip install -e '.[dev]'
+      - run: python -m pytest -q tests
+      - working-directory: research/mcp_harness
+        run: |
+          python -m unittest -v test_research.py
+          python verify_release.py
+          python harness.py --output /tmp/corporate-groups-ci
+          python evaluate.py --output /tmp/corporate-groups-ci/mutation_results.json

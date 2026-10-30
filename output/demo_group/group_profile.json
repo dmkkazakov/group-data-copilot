@@ -140,13 +140,13 @@
       "entity_id": "E001",
       "severity": "medium",
       "flag": "missing_financials",
-      "explanation": "No financial records were provided for the entity."
+      "explanation": "No financial record for the latest supplied year."
     },
     {
       "entity_id": "E002",
       "severity": "high",
       "flag": "revenue_concentration",
-      "explanation": "Entity generates 54.5% of group revenue in 2025."
+      "explanation": "Entity contributes 54.5% of supplied unconsolidated revenue in 2025."
     },
     {
       "entity_id": "E004",

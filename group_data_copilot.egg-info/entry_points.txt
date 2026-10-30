@@ -1,2 +1,0 @@
-[console_scripts]
-group-data-copilot = group_data_copilot.cli:main

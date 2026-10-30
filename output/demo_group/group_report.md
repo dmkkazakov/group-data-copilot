@@ -2,7 +2,7 @@
 
 ## Executive summary
 
-The agent identified **5 legal entities** and **5 ownership links**.
+The supplied files contain **5 legal entities** and **5 ownership links**.
 The current risk scan produced **3 high** and **1 medium** flags.
 
 ## Graph metrics
@@ -26,12 +26,14 @@ The current risk scan produced **3 high** and **1 medium** flags.
 
 | Severity | Entity ID | Flag | Explanation |
 |---|---|---|---|
-| medium | E001 | missing_financials | No financial records were provided for the entity. |
-| high | E002 | revenue_concentration | Entity generates 54.5% of group revenue in 2025. |
+| medium | E001 | missing_financials | No financial record for the latest supplied year. |
+| high | E002 | revenue_concentration | Entity contributes 54.5% of supplied unconsolidated revenue in 2025. |
 | high | E004 | high_leverage | Debt / EBITDA exceeds 4.0x in 2025. |
 | high | E005 | high_leverage | Debt / EBITDA exceeds 4.0x in 2025. |
 
 ## Analytical interpretation
+
+Financial totals are unconsolidated sums of supplied entity records. Currency, units and reporting basis must be aligned before ingestion. Intercompany eliminations are not performed. Missing metrics remain missing, and omitted entities can still make the supplied perimeter incomplete.
 
 This dossier is a first-pass analytical layer. It does not replace official due diligence, legal verification, sanction screening, financial statement analysis or credit committee materials.
 
